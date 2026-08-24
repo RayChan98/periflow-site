@@ -1,0 +1,205 @@
+---
+// 文章 2：泵管寿命 — 因素 + 更换信号 + 维护（tube replacement 类 SERP 前 3 打法）
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'How Long Does Peristaltic Pump Tubing Last? Life Factors, Replacement Signals and Maintenance';
+const date = 'August 18, 2026';
+const readTime = '9 min read';
+const related = [
+  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing: 7 Differences', readTime: '11 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/how-long-does-pump-tubing-last/', title: 'How Long Does Pump Tubing Last?', readTime: '9 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="How long peristaltic pump tubing lasts — the 5 factors that decide tube life (pressure, roller squeeze, media, Shore A hardness, duty), the signals that it is time to replace, and maintenance tips to extend it."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Pump Tubing Life</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+        <p>
+          The most common question we hear from pump buyers is also the most honest one: "How long will the tubing last?" There is no single number, because the tube is a wearing part — like a tire — and its life depends entirely on how you drive it. In gentle duty a peristaltic tube can run for thousands of hours; in brutal duty it may need replacement after a few hundred. What matters is that you know which regime you are in, and that you replace the tube before it fails mid-process.
+        </p>
+        <p>
+          This guide covers the 5 factors that decide tube life, the effect of pressure in practical terms, the replacement signals to watch for (including the 10% flow drop), and the maintenance habits that extend tube life without slowing down your operation.
+        </p>
+
+        <h2 id="short-answer">The Short Answer: A Realistic Life Range</h2>
+        <p>
+          Under typical continuous-duty conditions — back pressure below about 1 bar, moderate speed, a compatible non-abrasive fluid — a standard 50–65 Shore A silicone tube commonly lasts from a few hundred to a few thousand hours. Manufacturers publish life figures for their own materials and conditions; the numbers below are planning ranges, not guarantees, because your pressure, speed and media set the real result.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Duty condition</th>
+              <th>Typical relative tube life</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gentle: ≤1 bar back pressure, moderate speed, compatible fluid</td>
+              <td>Baseline — longest life (often 1,000+ hours)</td>
+            </tr>
+            <tr>
+              <td>Moderate: 2–3 bar continuous, higher speed</td>
+              <td>Roughly half of baseline</td>
+            </tr>
+            <tr>
+              <td>Heavy: near maximum rated pressure, abrasive media, high rpm</td>
+              <td>Shortest life — expect frequent tube changes</td>
+            </tr>
+            <tr>
+              <td>Dry running or wrong chemistry</td>
+              <td>Life shortened significantly; could fail in hours</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="factors">The 5 Factors That Decide Tubing Life</h2>
+
+        <h3>1. Back Pressure and Suction Lift</h3>
+        <p>
+          Pressure is the biggest single killer of tube life. Every squeeze cycle has to fight the back pressure pushing against the tube wall; the higher the pressure, the harder the rollers work and the faster the tube wall fatigues and thins at the squeeze point. A tube run near its maximum rated pressure can wear out several times faster than the same tube at low pressure. The same applies to suction lift: deep vacuum collapses the tube harder on the inlet side, and the aggressive flexing wears the wall from the inside. Keep pressure as low as your process allows and you effectively buy tube life.
+        </p>
+
+        <h3>2. Roller Squeeze, Speed and Roller Count</h3>
+        <p>
+          Tube life is a function of flex cycles — every roller pass compresses and releases the tube once. Double the pump speed and you double the flex cycles per hour, which is why high-rpm continuous duty shortens life so dramatically. Roller count matters too: a head with more rollers squeezes the tube more often per revolution, which smooths pulsation but also increases flex fatigue. The correct tube size and wall thickness for your head keep occlusion force in the designed range — an undersized tube gets crushed, an oversized one never seals properly.
+        </p>
+
+        <h3>3. Fluid Chemistry and Abrasiveness</h3>
+        <p>
+          The fluid attacks the tube in two ways: chemically and mechanically. Chemically, a fluid that is incompatible with the tube material (for example, a hydrocarbon solvent with silicone) swells, softens or hardens the tube and can cut life from months to hours. Mechanically, abrasive slurries and suspensions grind the tube wall from the inside like sandpaper — visible as a scored, roughened bore when you pull the tube out. If your media is abrasive, expect shorter life and plan a shorter replacement interval rather than waiting for a failure.
+        </p>
+
+        <h3>4. Tube Hardness (Shore A)</h3>
+        <p>
+          Hardness is measured on the Shore A scale, and peristaltic tubes typically range from about 40 A (soft) to 80 A (hard). Softer tubes occlude easily, need less roller torque and conform well — but they wear faster under friction and are more easily damaged by pressure. Harder tubes resist pressure, abrasion and dimensional change better and often deliver longer mechanical life, but they need stronger rollers, recover more slowly, and can generate more pulsation if the head is not designed for them. Match the durometer to the pump head's recommendation: that is the fastest way to get the rated life out of a tube.
+        </p>
+
+        <h3>5. Temperature and Duty Cycle</h3>
+        <p>
+          Heat accelerates wear in every elastomer. A tube that runs fine at 25 °C may lose most of its life at 80 °C, both because the material softens and because chemical attack speeds up. Duty cycle matters just as much: a tube running 24/7 accumulates flex cycles without rest, while intermittent duty lets the material recover between runs. If your process is continuous and hot, plan the shortest replacement interval of any factor on this list.
+        </p>
+
+        <h2 id="pressure">The Effect of Pressure on Life</h2>
+        <p>
+          Because pressure dominates life, it deserves its own section. Most laboratory pump heads are rated to roughly 1–3 bar, while industrial heads with reinforced tubing reach about 7–8 bar maximum. Those maximums are limits, not recommendations. In practice, running continuously above about half the tube's rated maximum pressure is where life starts to collapse — the tube wall thins visibly at the occlusion point and the first pinhole leak usually appears there. If your process needs sustained high pressure, the correct response is not a "stronger" tube of the same chemistry, but a material engineered for pressure (harder durometer, reinforced construction) sized correctly for the head.
+        </p>
+
+        <h2 id="signals">Replacement Signals: When to Change the Tube</h2>
+        <p>Do not wait for a leak. The tube gives clear warning signs, usually in this order:</p>
+        <ul>
+          <li><strong>Flow drops by about 10%</strong> — the first and most reliable signal. The tube has lost elasticity and no longer seals fully, so output drifts down. If you track flow, a 10% drop against the same speed setting means replacement time.</li>
+          <li><strong>Visible cracks or crazing</strong> — small splits on the outside at the squeeze point, or a roughened, crazed surface. Cracks are stress points that will become leaks.</li>
+          <li><strong>Discoloration or swelling</strong> — the tube changes color, feels sticky, or looks swollen. That is chemical attack; the material is degrading and will fail unpredictably.</li>
+          <li><strong>White particles or scored bore</strong> — material shedding from the inside wall into your fluid. This contaminates the process and means the bore is abrading.</li>
+          <li><strong>Visible flattening</strong> — the tube stays oval or flat where the rollers pass, instead of springing back. Elastic recovery is gone; flow accuracy is gone with it.</li>
+          <li><strong>Leaks or drops at the fittings</strong> — always replace immediately, not just the fitting, because the tube near the fitting has typically fatigued too.</li>
+        </ul>
+
+        <h2 id="maintenance">How to Extend Tubing Life: Maintenance That Works</h2>
+        <ul>
+          <li><strong>Run at the lowest adequate speed.</strong> Every rpm you remove cuts flex cycles per hour and buys hours of life.</li>
+          <li><strong>Relieve pressure when idle.</strong> If the pump stays pressurized overnight, the tube sits squeezed at the roller — that cold-flow deformation never fully recovers. Loosen or stop the head when practical.</li>
+          <li><strong>Check chemistry before every new fluid.</strong> A single batch of an incompatible solvent can destroy a tube in hours. Re-verify compatibility whenever the media changes.</li>
+          <li><strong>Rotate or advance the tube position.</strong> On multi-roller heads, shifting the tube slightly (or rotating the tube) spreads the squeeze point and evens out wear.</li>
+          <li><strong>Keep the tube wet and lubricated.</strong> Many tubes last longer when the fluid film lubricates the roller contact. Dry running — even briefly — should be the exception, not a habit.</li>
+          <li><strong>Log hours.</strong> Note the install date and running hours on each tube. After two or three replacement cycles you will know your own tube's realistic interval, and you can schedule changes before failure.</li>
+          <li><strong>Buy the right size.</strong> Correct internal diameter and wall thickness for the head prevent over-compression and under-sealing — both of which shorten life.</li>
+        </ul>
+
+        <h2 id="life-by-material">Expected Life by Material</h2>
+        <p>Different elastomers have different fatigue lives in a pump head. Again, treat these as planning ranges for gentle duty — your pressure, speed and media move the real numbers:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Typical continuous-duty life (gentle conditions)</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Silicone (50–65 Shore A)</td>
+              <td>500–1,500+ hours</td>
+              <td>Water, biological, food, lab media</td>
+            </tr>
+            <tr>
+              <td>EPDM</td>
+              <td>1,000–3,000+ hours</td>
+              <td>Acids, alkalis, abrasive slurries, ozone</td>
+            </tr>
+            <tr>
+              <td>Norprene-type TPE</td>
+              <td>1,500–3,000+ hours</td>
+              <td>Long-life general industrial duty</td>
+            </tr>
+            <tr>
+              <td>PTFE-lined</td>
+              <td>Varies widely by liner and duty</td>
+              <td>Aggressive chemicals where silicone fails</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Is it normal for silicone tubing to wear out in weeks?</h3>
+        <p>Only under heavy duty — high pressure, high speed, abrasive or incompatible media. Under gentle conditions the same tube should last hundreds of hours or more. If a tube fails quickly, check pressure, chemistry and speed before blaming the tube.</p>
+        <h3>Can I extend tube life by using a harder tube?</h3>
+        <p>Sometimes. Harder tubes (70–80 Shore A) resist pressure and abrasion better, but they must match the pump head's occlusion force — a head designed for soft tubes may not fully seal a hard one, which actually shortens effective life.</p>
+        <h3>Should I replace tubing on a schedule or on signals?</h3>
+        <p>Both. Use the signals (10% flow drop, cracks, discoloration) as the primary trigger, and use your logged hours to build a preventive schedule that changes tubes before the signals appear — especially in processes where downtime costs more than tubing.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Stock up on the right consumable — see our <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing range</a> and <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Tell Us Your Duty — We'll Recommend the Right Tube"
+    subtitle="Send your pressure, speed, media and running hours, and get a tubing recommendation with realistic life expectations within 24 hours."
+  />
+</Layout>

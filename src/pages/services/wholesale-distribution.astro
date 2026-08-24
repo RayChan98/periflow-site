@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Wholesale Distribution — Peristaltic Pump Volume Pricing for Distributors';
+const description = 'PERIFLOW wholesale distribution for distributors and resellers — factory-direct volume pricing, sample programs and dependable export logistics for peristaltic pumps and tubing.';
+
+const offers = [
+  { title: 'Tiered Volume Pricing', desc: 'Clear price breaks by quantity — the more you order, the better your margin. Request the wholesale price list for your region.' },
+  { title: 'Sample Program', desc: 'Validate pumps and tubing in your market before committing. Samples ship fast with wholesale pricing on the first bulk order.' },
+  { title: 'Full Product Range', desc: 'Pump heads, silicone and PTFE tubing, benchtop and dosing pumps — stock a complete peristaltic line from one factory.' },
+  { title: 'Private Label Options', desc: 'Sell under your own brand with custom labeling and packaging for qualifying distribution volumes.' },
+  { title: 'Export Logistics', desc: 'Reliable packing, documentation and shipping to 40+ countries, with lead-time visibility on every order.' },
+  { title: 'Dedicated Support', desc: 'A named account contact plus technical backup for your customers\' application questions.' },
+];
+
+const steps = [
+  { title: 'Inquiry & Spec Confirmation', desc: 'Tell us your target products, volumes and market. We confirm pricing tiers, lead times and minimums within 24 hours.' },
+  { title: 'Samples for Validation', desc: 'Evaluate samples in your own testing or with your first customers — built to the exact spec of the production order.' },
+  { title: 'Bulk Order & Production', desc: 'Lock your volume price, place the order and we schedule production with inspection at every stage.' },
+  { title: 'Shipment & After-Sales', desc: 'We handle packing and export documentation, and stay available for technical support on everything we shipped.' },
+];
+
+const products = [
+  { href: '/products/pump-heads/', title: 'Pump Heads', desc: 'Best-selling YZ/LP series heads with broad distributor demand.' },
+  { href: '/products/tubing/', title: 'Pump Tubing', desc: 'Recurring consumable revenue — silicone and PTFE-lined tubing.' },
+  { href: '/products/dosing-pumps/', title: 'Dosing Pumps', desc: 'Complete metering pumps for water treatment and process buyers.' },
+  { href: '/products/benchtop-pumps/', title: 'Benchtop Pumps', desc: 'Laboratory pumps for the research and education market.' },
+];
+
+const faqs = [
+  { q: 'How does wholesale pricing work?', a: 'We publish tiered price breaks based on order quantity. Send your annual volume estimate and we will confirm your tier and send the wholesale price list.' },
+  { q: 'Can I order samples first?', a: 'Yes — our sample program is designed for distributors. Sample orders are fast-tracked and the sample cost is credited against your first bulk order.' },
+  { q: 'What is the minimum order quantity?', a: 'MOQs vary by product. Standard heads and tubing have low MOQs; complete pump models and private-label runs have higher minimums. We confirm per product.' },
+  { q: 'Do you support private label for distributors?', a: 'Yes. For qualifying volumes we offer custom branding, labeling and packaging under your brand, with technical documentation to match.' },
+  { q: 'How do you handle shipping and customs documentation?', a: 'We pack for export, prepare commercial invoices, packing lists and certificates, and ship by sea, air or express per your preference.' },
+  { q: 'What support do my customers get?', a: 'Every distributor gets a dedicated account contact plus technical backup — selection advice, manuals and spare tubing supply for their end users.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/services/" class="transition hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-slate-200">Wholesale Distribution</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">SERVICES</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Wholesale Distribution & Volume Pricing</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Build your peristaltic pump business on factory-direct pricing. PERIFLOW supports distributors with tiered volume pricing, samples and dependable export logistics.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request the Price List</button>
+        <a href="/contact/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">Talk to Distribution Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we offer -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">WHAT WE OFFER</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Built for Distributors & Resellers</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {offers.map((o) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-blue/10 text-xl">✓</span>
+            <h3 class="mt-4 text-lg font-bold text-navy-950">{o.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{o.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process steps -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">HOW IT WORKS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">From Inquiry to Shipment</h2>
+      <div class="mt-8 space-y-4">
+        {steps.map((s, i) => (
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-950 text-sm font-bold text-white">{i + 1}</span>
+            <div>
+              <p class="font-semibold text-navy-950">{s.title}</p>
+              <p class="mt-1 text-sm text-slate-600">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended products -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">STOCK LINES</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">High-Demand Lines for Distribution</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {products.map((p) => (
+          <a href={p.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-base font-bold text-navy-950">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">View product <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Distribution Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Ready to Stock PERIFLOW?"
+    subtitle="Send your target volumes and markets — get the wholesale price list and MOQs within 24 hours."
+  />
+</Layout>

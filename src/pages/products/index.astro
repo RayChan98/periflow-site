@@ -1,0 +1,191 @@
+---
+// 产品总览页：全品类导航 + 对比表 + FAQ
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const categories = [
+  {
+    href: '/products/pump-heads/',
+    name: 'Pump Heads',
+    tagline: 'YZ15 / YZ35 / LP15-6 series — 0.1-600 rpm, ±1% accuracy',
+    desc: 'Roller pump heads compatible with 13#-18# tubing, covering flows from 0.014 to 4560 ml/min for labs and production lines.',
+  },
+  {
+    href: '/products/tubing/',
+    name: 'Pump Tubing',
+    tagline: 'Platinum-cured silicone & PTFE-lined composite',
+    desc: 'Seven standard sizes from 13# to 18#, rated -40 to 200°C, with PTFE-lined options for aggressive chemicals.',
+  },
+  {
+    href: '/products/benchtop-pumps/',
+    name: 'Benchtop Pumps',
+    tagline: 'Touchscreen control with RS485 — built for the lab',
+    desc: 'Laboratory peristaltic pumps with 0.1-600 rpm speed control for cell culture, media dispensing and crystallization.',
+  },
+  {
+    href: '/products/dosing-pumps/',
+    name: 'Dosing Pumps',
+    tagline: 'Chemical metering up to 6 bar',
+    desc: 'Precision dosing pumps for pH control, water treatment and chemical injection where repeatable dosing matters.',
+  },
+  {
+    href: '/products/oem-pumps/',
+    name: 'OEM / ODM Pumps',
+    tagline: 'Panel-mount, multi-channel, 12-24V, stepper driven',
+    desc: 'Custom pump modules built to your drawing — prototype to mass production with full documentation.',
+  },
+];
+---
+
+<Layout
+  title="Peristaltic Pump Products | PERIFLOW"
+  description="PERIFLOW peristaltic pump products — pump heads (YZ15/YZ35/LP15-6), platinum-cured silicone & PTFE tubing, benchtop lab pumps, dosing pumps and OEM/ODM pump modules."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">PRODUCTS</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">Peristaltic Pump Products for Precision Fluid Transfer</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        From pump heads and tubing to complete lab and dosing systems — one factory, one standard of quality. Fluids touch only the tube, so maintenance is a tube change and nothing more.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600">Get a Quote</button>
+        <a href="#product-range" class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore the Range</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品类导航卡片 -->
+  <section id="product-range" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
+      <p class="text-sm font-semibold text-brand-blue">PRODUCT RANGE</p>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-navy-950">Five Lines, One Standard</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {categories.map((c) => (
+          <a href={c.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-brand-blue hover:shadow-lg">
+            <h3 class="text-lg font-extrabold text-navy-950 group-hover:text-brand-blue">{c.name}</h3>
+            <p class="mt-1 text-sm font-medium text-brand-green">{c.tagline}</p>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{c.desc}</p>
+            <span class="mt-5 text-sm font-semibold text-brand-blue">View Details →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 全系列对比表 -->
+  <section id="specifications" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Range Comparison</h2>
+      <p class="mt-2 max-w-2xl text-sm text-slate-600">A quick look at what each product line delivers. Detailed datasheets are available on request.</p>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Line</th>
+              <th class="px-6 py-3.5 font-semibold">Flow Range</th>
+              <th class="px-6 py-3.5 font-semibold">Speed Range</th>
+              <th class="px-6 py-3.5 font-semibold">Key Options</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="bg-white">
+              <td class="px-6 py-3 font-medium text-navy-950">Pump Heads</td>
+              <td class="px-6 py-3 text-slate-600">0.014 - 4560 ml/min</td>
+              <td class="px-6 py-3 text-slate-600">0.1 - 600 rpm</td>
+              <td class="px-6 py-3 text-slate-600">YZ15 / YZ35 / LP15-6, 13#-18# tubing</td>
+            </tr>
+            <tr class="bg-slate-50/60">
+              <td class="px-6 py-3 font-medium text-navy-950">Pump Tubing</td>
+              <td class="px-6 py-3 text-slate-600">Depends on bore & speed</td>
+              <td class="px-6 py-3 text-slate-600">—</td>
+              <td class="px-6 py-3 text-slate-600">Platinum silicone / PTFE-lined, 13#-18#</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-3 font-medium text-navy-950">Benchtop Pumps</td>
+              <td class="px-6 py-3 text-slate-600">0.014 - 4560 ml/min</td>
+              <td class="px-6 py-3 text-slate-600">0.1 - 600 rpm</td>
+              <td class="px-6 py-3 text-slate-600">Touchscreen, RS485, reversible</td>
+            </tr>
+            <tr class="bg-slate-50/60">
+              <td class="px-6 py-3 font-medium text-navy-950">Dosing Pumps</td>
+              <td class="px-6 py-3 text-slate-600">Metering duty</td>
+              <td class="px-6 py-3 text-slate-600">Adjustable</td>
+              <td class="px-6 py-3 text-slate-600">Up to 6 bar, pH control inputs</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-3 font-medium text-navy-950">OEM / ODM Modules</td>
+              <td class="px-6 py-3 text-slate-600">Per your spec</td>
+              <td class="px-6 py-3 text-slate-600">Per your spec</td>
+              <td class="px-6 py-3 text-slate-600">Panel-mount, multi-channel, 12-24V</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">* Flow values measured with water at 600 rpm on YZ15 heads. Contact us for the current datasheet.</p>
+    </div>
+  </section>
+
+  <!-- 核心卖点 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <h2 class="text-center text-3xl font-extrabold tracking-tight text-navy-950">Why the Range Works Together</h2>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'One Tubing Standard', desc: 'Every head and pump accepts the same 13#-18# tubing family — one inventory across all your machines.' },
+          { title: '±1% Repeatable Dosing', desc: 'Stepper-driven rollers keep flow repeatable run after run, batch after batch.' },
+          { title: 'Contamination-Free', desc: 'Fluid contacts only the tube interior. No seals, no valves, no cross-contamination.' },
+          { title: 'OEM-Ready', desc: 'Panel-mount, 12-24V and multi-channel builds documented for your equipment.' },
+        ].map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-sm font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Built for These Industries</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {['Laboratory & Biotech', 'Water Treatment', 'Chemical Processing', 'Food & Beverage', 'Pharmaceutical', 'Printing & Ink', 'Ceramics & Coating', 'Environmental Monitoring'].map((a) => (
+          <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">{a}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4">
+        {[
+          { q: 'Do all PERIFLOW products use the same tubing?', a: 'Yes. Every pump head, benchtop pump and dosing pump accepts the standard 13#-18# tubing family, so one spares inventory covers your whole operation.' },
+          { q: 'What accuracy can I expect?', a: 'Stepper-driven pump heads hold ±1% flow repeatability in normal operating conditions, which is why they are trusted for media dispensing and chemical metering.' },
+          { q: 'Can you build a pump to my specification?', a: 'Yes — panel-mount, multi-channel, 12-24V DC and stepper-driven custom builds are our OEM/ODM core business. Send your drawing and we take it from prototype to production.' },
+          { q: 'What are your lead times?', a: 'Standard products ship from stock within days. Custom OEM builds follow an agreed prototype schedule, typically starting within 2-3 weeks of drawing approval.' },
+          { q: 'Do you support distributors?', a: 'We supply factory-direct to distributors and system integrators with volume pricing, private-label options and technical support for your own documentation.' },
+        ].map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-bold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Not Sure Which Pump Fits Your Application?"
+    subtitle="Send your fluid, flow rate and pressure requirements — we will recommend the right pump head, tubing and drive within 24 hours."
+  />
+</Layout>

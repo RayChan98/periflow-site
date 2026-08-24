@@ -1,0 +1,139 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Peristaltic Pump Applications — Laboratory, Chemical Dosing, Food & Beverage, Biopharma';
+const description = 'Explore how PERIFLOW peristaltic pumps serve laboratories, water treatment, food & beverage and biopharma — contamination-free, precise, low-shear fluid handling.';
+
+const why = [
+  { title: 'Fluid Touches Only the Tube', desc: 'No valves, seals or impellers in the flow path. The pump tube is the only wetted part, so cross-contamination between batches is simply designed out.' },
+  { title: 'Precise, Repeatable Dosing', desc: 'Digitally controlled roller speed delivers ±1% flow accuracy — the same dose every cycle, shift after shift.' },
+  { title: 'Self-Priming & Run-Dry Safe', desc: 'Peristaltic pumps prime automatically and tolerate dry running without damage, simplifying installation and protecting unattended processes.' },
+  { title: 'Low Shear for Sensitive Fluids', desc: 'Gentle squeezing action keeps cells, proteins, emulsions and shear-sensitive ingredients intact during transfer.' },
+];
+
+const tableRows = [
+  { industry: 'Laboratory', tasks: 'Cell culture media dispensing, crystallization feed, reagent transfer, automated protocols', products: 'Benchtop pumps, pump heads, tubing' },
+  { industry: 'Chemical Dosing', tasks: 'pH control, flocculant and coagulant dosing, chlorine metering, boiler water treatment', products: 'Dosing pumps, pump heads, tubing' },
+  { industry: 'Food & Beverage', tasks: 'Hygienic transfer, filling, condiment and sauce dispensing, juice handling', products: 'Pump heads, FDA-grade tubing, benchtop pumps' },
+  { industry: 'Biopharma', tasks: 'Bioreactor feeding, sterile transfer, harvest, single-use assembly integration', products: 'Pump heads, tubing, benchtop pumps' },
+];
+
+const industries = [
+  { href: '/applications/laboratory/', icon: '🔬', title: 'Laboratory', desc: 'Cell culture, media dispensing, scientific crystallization and RS485-controlled automation.' },
+  { href: '/applications/chemical-dosing/', icon: '🧪', title: 'Chemical Dosing', desc: 'Water treatment, pH control and flocculant metering at pressures up to 6 bar.' },
+  { href: '/applications/food-beverage/', icon: '🍶', title: 'Food & Beverage', desc: 'Hygienic transfer, filling and condiment dispensing with FDA-grade silicone tubing.' },
+  { href: '/applications/biopharma/', icon: '💊', title: 'Biopharma', desc: 'Sterile fluid handling, bioreactor feeding and single-use system integration.' },
+];
+
+const faqs = [
+  { q: 'Why choose a peristaltic pump over a diaphragm or centrifugal pump?', a: 'Peristaltic pumps have no valves, seals or impellers in contact with the fluid. That means no clogging, no seal leakage and no cross-contamination — with the pump tube as the only consumable, which you can replace in minutes.' },
+  { q: 'Which pump tube material should I use?', a: 'Platinum-cured silicone suits most aqueous, laboratory and food applications. PTFE-lined tubing handles aggressive chemicals. Share your fluid data and our engineers will recommend the right tube for your process.' },
+  { q: 'What accuracy can I expect?', a: 'PERIFLOW digital pumps deliver ±1% flow repeatability for dosing and dispensing applications. Calibrated tubing and controlled roller speed keep the dose consistent.' },
+  { q: 'Can peristaltic pumps run dry?', a: 'Yes. Because the fluid never touches the pump mechanism, dry running causes no damage — a major safety advantage for dosing and unattended processes.' },
+  { q: 'Do you support custom configurations for my application?', a: 'Yes. We offer OEM/ODM configurations — panel-mount, multi-channel and 12-24V designs — built around your application requirements and volumes.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <span class="text-slate-200">Applications</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">APPLICATIONS</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Peristaltic Pump Applications Across Demanding Industries</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">From the laboratory bench to the process floor, PERIFLOW peristaltic pumps move fluids cleanly and accurately. Explore how our pump heads, tubing and complete pumps serve laboratory, chemical dosing, food & beverage and biopharma applications.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request a Quote</button>
+        <a href="/contact/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">Talk to an Engineer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why peristaltic -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Why Peristaltic</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">One Pump Principle, Four Major Industries</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {why.map((w) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-navy-950">{w.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application scenario table -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">AT A GLANCE</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Application Scenarios at a Glance</h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-5 py-4 font-semibold">Industry</th>
+              <th class="px-5 py-4 font-semibold">Typical Tasks</th>
+              <th class="px-5 py-4 font-semibold">Recommended Products</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {tableRows.map((r) => (
+              <tr class="transition hover:bg-slate-50">
+                <td class="px-5 py-4 font-bold text-navy-950">{r.industry}</td>
+                <td class="px-5 py-4 text-slate-600">{r.tasks}</td>
+                <td class="px-5 py-4 text-slate-600">{r.products}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry links -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">INDUSTRY PAGES</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Dive Into Your Industry</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {industries.map((a) => (
+          <a href={a.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="text-3xl">{a.icon}</span>
+            <h3 class="mt-4 text-base font-bold text-navy-950">{a.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{a.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">Learn more <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Common Application Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Not Sure Which Pump Fits Your Process?"
+    subtitle="Send us your fluid details — liquid, flow rate, pressure — and get an application recommendation within 24 hours."
+  />
+</Layout>

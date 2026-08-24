@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'OEM / ODM Peristaltic Pump Manufacturing — Custom Pumps for Your Equipment';
+const description = 'PERIFLOW OEM/ODM peristaltic pump manufacturing — panel-mount, multi-channel and 12-24V custom designs, from drawings and prototype to mass production.';
+
+const offers = [
+  { title: 'Panel-Mount Designs', desc: 'Compact pump drives engineered for direct mounting into analyzers, dispensers and process equipment.' },
+  { title: 'Multi-Channel Configurations', desc: 'One drive, several tube channels — for parallel dosing, multi-reagent systems and high-throughput dispensing.' },
+  { title: '12V / 24V DC Drives', desc: 'Low-voltage, brushless and stepper options for battery-powered, portable and embedded equipment.' },
+  { title: 'ODM & Private Label', desc: 'Your brand, our engineering. Custom colors, labeling, packaging and documentation under your brand.' },
+  { title: 'Custom Flow Performance', desc: 'Flow rates, tube sizes and control interfaces tuned to your exact specification and duty cycle.' },
+  { title: 'Volume Manufacturing', desc: 'Consistent production quality with QC at every stage, from first article to full series.' },
+];
+
+const steps = [
+  { title: 'Share Your Drawings & Specs', desc: 'Send mechanical drawings, electrical requirements (12/24V, control signals) and target flow rates. We confirm feasibility and quote within 24 hours.' },
+  { title: 'Prototype & Sample', desc: 'We build and test a prototype to your spec, then ship samples for your own validation and installation testing.' },
+  { title: 'Approve & Mass Produce', desc: 'After sample approval, production runs follow a locked spec with incoming, in-line and final inspection.' },
+];
+
+const products = [
+  { href: '/products/oem-pumps/', title: 'OEM Pumps', desc: 'Custom peristaltic pump solutions — panel-mount, 12V/24V, multi-channel.' },
+  { href: '/products/pump-heads/', title: 'Pump Heads', desc: 'Standard YZ/LP heads that drop into custom OEM drives.' },
+  { href: '/products/tubing/', title: 'Pump Tubing', desc: 'Silicone and PTFE-lined tubing supplied to OEM tube specifications.' },
+];
+
+const faqs = [
+  { q: 'What information do you need for an OEM quote?', a: 'Mechanical dimensions, mounting requirements, voltage (12V/24V/AC), control interface, target flow rate, tube size and estimated annual volume. The more detail, the faster the quote.' },
+  { q: 'Can you build pumps to our existing drawings?', a: 'Yes. We work from customer drawings, samples or reference units. For ODM projects we also develop the complete design in-house.' },
+  { q: 'How many channels can a multi-channel pump have?', a: 'Typical configurations range from 2 to 12 channels per drive. Share your channel count and flow requirements and we will propose a layout.' },
+  { q: 'What are typical lead times for OEM projects?', a: 'Prototypes are typically ready in 1-2 weeks after spec confirmation; mass production follows the agreed schedule, usually 3-6 weeks depending on volume.' },
+  { q: 'Do you offer private label and custom branding?', a: 'Yes — ODM covers custom colors, logo printing, labels, packaging and user documentation under your brand.' },
+  { q: 'What is the minimum order for OEM production?', a: 'MOQs depend on the configuration and tooling involved. Contact us with your volumes and we will confirm the MOQ and tier pricing.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/services/" class="transition hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-slate-200">OEM / ODM</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">SERVICES</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">OEM / ODM Peristaltic Pump Manufacturing</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Your equipment deserves a pump built around it — not the other way around. We manufacture custom peristaltic pumps to your drawings, from prototype to mass production.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request a Quote</button>
+        <a href="/products/oem-pumps/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">View OEM Pumps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we offer -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">WHAT WE OFFER</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Custom Pump Manufacturing, End to End</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {offers.map((o) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-blue/10 text-xl">✓</span>
+            <h3 class="mt-4 text-lg font-bold text-navy-950">{o.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{o.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process steps -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">HOW IT WORKS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">From Drawings to Mass Production</h2>
+      <div class="mt-8 space-y-4">
+        {steps.map((s, i) => (
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-950 text-sm font-bold text-white">{i + 1}</span>
+            <div>
+              <p class="font-semibold text-navy-950">{s.title}</p>
+              <p class="mt-1 text-sm text-slate-600">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended products -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">STARTING POINTS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Base Products for Your Custom Build</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {products.map((p) => (
+          <a href={p.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-base font-bold text-navy-950">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">View product <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">OEM / ODM Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Have a Pump Design in Mind?"
+    subtitle="Send your drawings and specs — get an OEM feasibility review and quotation within 24 hours."
+  />
+</Layout>

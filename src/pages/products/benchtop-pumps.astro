@@ -1,0 +1,133 @@
+---
+// 实验室台式泵产品页
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const specs = [
+  ['Product Type', 'Laboratory benchtop peristaltic pump'],
+  ['Control Interface', 'Touchscreen + RS485 (remote control)'],
+  ['Speed Range', '0.1 - 600 rpm, continuously adjustable'],
+  ['Flow Range', '0.014 - 4560 ml/min (with standard tubing)'],
+  ['Flow Accuracy', '±1% repeatability'],
+  ['Tubing Compatibility', '13# - 18# standard sizes'],
+  ['Direction', 'Forward / reverse, reversible on the fly'],
+  ['Communication', 'RS485 for PC / PLC integration'],
+];
+
+const features = [
+  { title: 'Touchscreen Control', desc: 'Set speed, direction and dispensing volume directly on the screen — no manual fiddling, no hidden menus.' },
+  { title: 'RS485 Remote Control', desc: 'Plug into your lab automation or PLC. Start, stop, reverse and read status over RS485 with a documented protocol.' },
+  { title: '0.1-600 rpm Adjustment', desc: 'Fine speed control across the full flow window — slow enough for crystallisation, fast enough for batch transfer.' },
+  { title: '±1% Repeatability', desc: 'Stepper-driven rollers keep each dispense repeatable, batch after batch — data you can defend.' },
+  { title: 'Tube-Only Contact', desc: 'Fluid touches only the tube interior. Sterilise or replace the tube and the pump is clean for the next run.' },
+  { title: 'Quiet, Bench-Friendly Footprint', desc: 'Compact housing with low vibration for shared lab spaces and clean benches.' },
+];
+
+const applications = ['Cell Culture', 'Media Dispensing', 'Crystallisation Feed', 'Chromatography', 'Filtration', 'Fermentation Feed', 'Sample Transfer', 'Reagent Dosing'];
+
+const faqs = [
+  { q: 'Can I control the pump from my computer?', a: 'Yes. Every benchtop pump includes RS485 communication with a documented protocol, so you can integrate start/stop, speed set-point and status feedback into your own software or PLC.' },
+  { q: 'What flow rates can I actually achieve?', a: 'With standard 13#-18# tubing, the pump covers 0.014 to 4560 ml/min across the 0.1-600 rpm range. Choose the tube bore to match your target window.' },
+  { q: 'Is the pump suitable for cell culture media?', a: 'Yes. Peristaltic action is gentle on shear-sensitive media, and because fluid only contacts the tube, you can sterilise or swap the tube between runs to prevent cross-contamination.' },
+  { q: 'Can it dose a set volume automatically?', a: 'The touchscreen supports volume-based dispensing, and for automation-heavy workflows the RS485 interface gives you full programmatic control.' },
+  { q: 'What maintenance does it need?', a: 'Essentially none beyond tubing. Replace the tube on a set schedule and the pump keeps running — no seals, valves or impellers to service.' },
+  { q: 'Is a foot switch or remote start available?', a: 'Yes — remote start options including foot switches and external trigger inputs are available as accessories. Tell us how you run your workflow.' },
+];
+---
+
+<Layout
+  title="Benchtop Peristaltic Pumps for Laboratories | PERIFLOW"
+  description="PERIFLOW benchtop peristaltic pumps — touchscreen and RS485 control, 0.1-600 rpm, flow 0.014-4560 ml/min for cell culture, media dispensing and crystallisation."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">BENCHTOP PUMPS</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">A Lab Pump That Listens to Your Protocol</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        Touchscreen control and RS485 integration on a 0.1-600 rpm platform — 0.014 to 4560 ml/min for cell culture, media dispensing and crystallisation.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600">Get a Quote</button>
+        <a href="#specifications" class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore Specifications</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术规格表 -->
+  <section id="specifications" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Technical Specifications</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Item</th>
+              <th class="px-6 py-3.5 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {specs.map(([item, value], i) => (
+              <tr class:list={['transition hover:bg-slate-50', i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white']}>
+                <td class="px-6 py-3 font-medium text-navy-950">{item}</td>
+                <td class="px-6 py-3 text-slate-600">{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">* Flow measured with water. Specifications subject to change — contact us for the current datasheet.</p>
+    </div>
+  </section>
+
+  <!-- 特性清单 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Built for Reproducible Science</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Applications</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {applications.map((a) => (
+          <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">{a}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-bold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Bench Pumps for Your Exact Protocol"
+    subtitle="Tell us your flow window, control preference and tubing size — we will recommend the right benchtop configuration within 24 hours."
+  />
+</Layout>

@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const products = [
+  {
+    title: 'Pump Heads',
+    description: 'YZ15/YZ35/LP series peristaltic pump heads with 0.1-600rpm speed range, ±1% flow precision and multi-tube compatibility (13#-18#).',
+    href: '/products/pump-heads/',
+    tag: 'YZ / LP SERIES',
+  },
+  {
+    title: 'Pump Tubing',
+    description: 'Platinum-cured silicone and PTFE-lined tubing in 13#-18# sizes — the consumable that keeps your pump running, replacement-friendly.',
+    href: '/products/tubing/',
+    tag: 'SILICONE / PTFE',
+  },
+  {
+    title: 'Benchtop Pumps',
+    description: 'Laboratory variable-speed peristaltic pumps with touchscreen control, RS485 and precise dispensing for cell culture and media.',
+    href: '/products/benchtop-pumps/',
+    tag: 'LAB SERIES',
+  },
+  {
+    title: 'Dosing Pumps',
+    description: 'Chemical dosing and metering peristaltic pumps for water treatment, pH control and process dosing up to 6 bar.',
+    href: '/products/dosing-pumps/',
+    tag: 'DOSING SERIES',
+  },
+  {
+    title: 'OEM Pumps',
+    description: 'Custom peristaltic pump solutions — panel-mount, 12V/24V, multi-channel. Your specs, our manufacturing.',
+    href: '/products/oem-pumps/',
+    tag: 'OEM / ODM',
+  },
+];
+
+const features = [
+  { title: 'Pump Tube Is the Only Consumable', desc: 'No valves, no seals, no impellers. Replace the tubing and your pump is like new — that is the peristaltic advantage.' },
+  { title: 'Contamination-Free Flow', desc: 'Fluid touches only the tube interior — ideal for sterile, pharmaceutical and food applications.' },
+  { title: 'Self-Priming & Run-Dry Safe', desc: 'Pumps prime automatically and tolerate dry running without damage.' },
+  { title: '±1% Flow Precision', desc: 'Digital control delivers accurate, repeatable dosing for laboratory and process use.' },
+  { title: 'OEM & Private Label', desc: 'Panel-mount, multi-channel, 12-24V designs tailored to your equipment.' },
+  { title: 'Factory-Direct Pricing', desc: 'Manufacturer pricing with fast lead times and application support.' },
+];
+---
+
+<Layout title="PERIFLOW — Peristaltic Pump Manufacturer | Pump Heads, Tubing & Lab Pumps" description="Peristaltic pump manufacturer offering pump heads, silicone & PTFE tubing, benchtop lab pumps and OEM solutions. Factory-direct, contamination-free flow, ±1% precision.">
+  <Hero
+    eyebrow="Peristaltic Pump Manufacturer"
+    title="Peristaltic Pumps That Keep Your Process Moving"
+    subtitle="Pump heads, tubing and laboratory pumps built for contamination-free, precision fluid transfer. Factory-direct manufacturing with OEM support — from single units to volume programs."
+    primaryCta={{ href: '/products/', label: 'Explore Products' }}
+    secondaryCta={{ href: '/contact/', label: 'Request a Quote' }}
+  />
+
+  <!-- 产品线 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Product Lines</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-navy-950">Complete Peristaltic Pump Solutions</h2>
+        <p class="mt-4 text-base text-slate-600">From pump heads to precision tubing to complete lab and dosing pumps — one partner for your fluid handling needs.</p>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {products.map((p) => <ProductCard title={p.title} description={p.description} href={p.href} tag={p.tag} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心优势 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Why Peristaltic</p>
+          <h2 class="mt-2 text-3xl font-extrabold text-navy-950">The Pump That Simplifies Fluid Handling</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">A peristaltic pump moves fluid by squeezing a tube with rotating rollers — nothing but the tube touches your product. That single design choice eliminates the valves, seals and impellers that wear out in other pumps.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            {features.map((f) => (
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <h3 class="text-sm font-bold text-navy-950">{f.title}</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-2xl bg-navy-950 p-8 text-white">
+          <h3 class="text-lg font-bold">Peristaltic Pump at a Glance</h3>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li class="flex gap-3"><span class="font-bold text-cta-orange">01</span> Fluid enters the tube and is sealed by the roller</li>
+            <li class="flex gap-3"><span class="font-bold text-cta-orange">02</span> Rollers squeeze the tube, pushing fluid forward</li>
+            <li class="flex gap-3"><span class="font-bold text-cta-orange">03</span> Tube rebounds, drawing in the next volume</li>
+            <li class="flex gap-3"><span class="font-bold text-cta-orange">04</span> Repeat — precise, pulsatile-free transfer</li>
+          </ul>
+          <p class="mt-6 rounded-lg bg-white/10 p-4 text-xs leading-relaxed text-slate-300">No valves to clog. No seals to leak. No product contamination. When the tube wears, replace it in minutes — not the whole pump.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-green">Applications</p>
+        <h2 class="mt-2 text-3xl font-extrabold">Built for Demanding Industries</h2>
+        <p class="mt-4 text-base text-slate-300">Wherever fluids must move cleanly and accurately, PERIFLOW pumps deliver.</p>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { href: '/applications/laboratory/', icon: '🔬', title: 'Laboratory', desc: 'Cell culture, media dispensing, scientific crystallization' },
+          { href: '/applications/chemical-dosing/', icon: '🧪', title: 'Chemical Dosing', desc: 'Water treatment, pH control, reagent metering' },
+          { href: '/applications/food-beverage/', icon: '🍶', title: 'Food & Beverage', desc: 'Hygienic transfer, filling, condiment dispensing' },
+          { href: '/applications/biopharma/', icon: '💊', title: 'Biopharma', desc: 'Sterile fluid handling, bioreactor feed' },
+        ].map((a) => (
+          <a href={a.href} class="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-brand-blue hover:bg-white/10">
+            <span class="text-3xl">{a.icon}</span>
+            <h3 class="mt-4 text-base font-bold">{a.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">{a.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
+              Learn more <span class="transition group-hover:translate-x-0.5">→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 信任信号 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <div class="grid gap-8 rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:grid-cols-3">
+        {[
+          { num: '15+', label: 'Years in fluid handling' },
+          { num: '500+', label: 'Pump models & configurations' },
+          { num: '40+', label: 'Export countries served' },
+        ].map((s) => (
+          <div class="text-center">
+            <p class="text-3xl font-extrabold text-brand-blue">{s.num}</p>
+            <p class="mt-1 text-sm text-slate-600">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Need the Right Pump for Your Application?"
+    subtitle="Send us your fluid details — liquid, flow rate, pressure — and get a recommendation within 24 hours."
+    ctaLabel="Get a Quote"
+  />
+</Layout>

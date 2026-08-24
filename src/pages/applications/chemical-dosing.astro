@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Chemical Dosing Pumps — Water Treatment, pH Control & Flocculant Metering';
+const description = 'PERIFLOW chemical dosing peristaltic pumps for water treatment, pH control and flocculant dosing — chemical-resistant tubing, self-priming and reliable metering up to 6 bar.';
+
+const why = [
+  { title: 'Chemical-Resistant Tubing', desc: 'PTFE-lined and reinforced tubing handles acids, alkalis, coagulants and flocculants — while the pump mechanism never touches the chemical.' },
+  { title: 'Self-Priming & Run-Dry Safe', desc: 'No check valves to clog, no prime loss after a suction line empties. The pump re-primes automatically and tolerates dry running safely.' },
+  { title: 'Precise Metering Up to 6 Bar', desc: 'Accurate, repeatable dosing of pH control agents and flocculants at system pressures up to 6 bar, with ±1% flow repeatability.' },
+  { title: 'Low Maintenance, Long Tube Life', desc: 'One consumable — the tube. No valves, diaphragms or seals to rebuild, keeping chemical rooms cleaner and simpler to run.' },
+];
+
+const tableRows = [
+  { application: 'pH control dosing', requirement: 'Continuous, precise acid/alkali addition, fast response', product: 'Dosing pumps' },
+  { application: 'Flocculant & coagulant dosing', requirement: 'Viscous polymer metering without shear damage', product: 'Dosing pumps, pump heads' },
+  { application: 'Chlorine & disinfectant dosing', requirement: 'Chemical-resistant tubing, reliable metering', product: 'Dosing pumps' },
+  { application: 'Antifoam & biocide addition', requirement: 'Small, repeatable doses, remote control', product: 'Dosing pumps' },
+  { application: 'Boiler & cooling water treatment', requirement: 'Pressure up to 6 bar, unattended operation', product: 'Dosing pumps' },
+];
+
+const products = [
+  { href: '/products/dosing-pumps/', title: 'Dosing Pumps', desc: 'Metering peristaltic pumps for water treatment, pH control and process dosing up to 6 bar.' },
+  { href: '/products/pump-heads/', title: 'Pump Heads', desc: 'Robust YZ/LP series heads for multi-channel and higher-flow dosing rigs.' },
+  { href: '/products/tubing/', title: 'Pump Tubing', desc: 'PTFE-lined and silicone tubing sized and rated for aggressive chemicals.' },
+];
+
+const faqs = [
+  { q: 'Can a peristaltic pump dose aggressive chemicals?', a: 'Yes. The chemical only touches the tube bore, so PTFE-lined or reinforced tubing is chosen to match the chemical — and the pump head itself stays clean.' },
+  { q: 'What happens if the chemical tank runs empty?', a: 'The pump simply runs dry without damage and re-primes automatically when liquid returns — no air lock, no burnt seals, no priming pump required.' },
+  { q: 'What pressure can your dosing pumps handle?', a: 'Our dosing pumps meter reliably at system pressures up to 6 bar, covering most water treatment and process injection points.' },
+  { q: 'How accurate is chemical dosing?', a: 'Digital speed control gives ±1% flow repeatability, so pH correction and flocculant addition stay consistent even at low flow rates.' },
+  { q: 'Do the pumps support external control?', a: 'Yes — analog 4-20mA, external trigger and RS485 options allow integration with pH controllers, PLCs and SCADA systems.' },
+  { q: 'How often do I need to replace the tubing?', a: 'Tube life depends on chemical, speed and pressure — typically weeks to months. Tube replacement takes minutes and costs a fraction of rebuilding a diaphragm pump.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/applications/" class="transition hover:text-white">Applications</a>
+        <span>/</span>
+        <span class="text-slate-200">Chemical Dosing</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">APPLICATIONS</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Chemical Dosing Pumps for Water Treatment & pH Control</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Keep pH, flocculation and disinfection on target — reliably, day after day. PERIFLOW peristaltic dosing pumps meter chemicals precisely, without valves to clog or seals to leak.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request a Quote</button>
+        <a href="/products/dosing-pumps/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">View Dosing Pumps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why peristaltic -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Why Peristaltic for Dosing</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Why Chemical Dosing Needs Peristaltic Pumps</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {why.map((w) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-navy-950">{w.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application table -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">DOSING SCENARIOS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Chemical Dosing Application Scenarios</h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-5 py-4 font-semibold">Application</th>
+              <th class="px-5 py-4 font-semibold">Typical Requirement</th>
+              <th class="px-5 py-4 font-semibold">Recommended Product</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {tableRows.map((r) => (
+              <tr class="transition hover:bg-slate-50">
+                <td class="px-5 py-4 font-bold text-navy-950">{r.application}</td>
+                <td class="px-5 py-4 text-slate-600">{r.requirement}</td>
+                <td class="px-5 py-4 text-slate-600">{r.product}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended products -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">RECOMMENDED</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Recommended for Chemical Dosing</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {products.map((p) => (
+          <a href={p.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-base font-bold text-navy-950">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">View product <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Chemical Dosing Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Spec Out Your Dosing System"
+    subtitle="Send us your chemical, dose rate and line pressure — get a pump and tubing recommendation within 24 hours."
+  />
+</Layout>

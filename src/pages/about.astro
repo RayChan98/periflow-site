@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+
+<Layout title="About Us | PERIFLOW Peristaltic Pump Manufacturer" description="PERIFLOW is a peristaltic pump manufacturer specializing in pump heads, silicone & PTFE tubing and laboratory pumps, with factory-direct pricing and OEM/ODM support.">
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">ABOUT US</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">A Peristaltic Pump Manufacturer That Keeps It Simple</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        PERIFLOW designs and manufactures peristaltic pump heads, pump tubing and laboratory pumps — factory-direct to distributors, laboratories and OEM equipment builders worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-navy-950">The Pump That Simplifies Fluid Handling</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Most pumps rely on valves, seals and impellers — parts that wear, clog and contaminate. A peristaltic pump works differently: rotating rollers squeeze a tube, and the fluid never touches anything but the tube's interior. No valves to clog, no seals to leak, no product contamination.
+          </p>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            We started PERIFLOW with a simple belief: when the only consumable is the tube, maintenance stops being a project. Replace the tubing in minutes and your pump performs like new. That reliability is why laboratories, water treatment plants and OEM equipment builders choose peristaltic — and why they choose us.
+          </p>
+          <div class="mt-8 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8">
+            <div>
+              <p class="text-3xl font-extrabold text-brand-blue">±1%</p>
+              <p class="mt-1 text-sm text-slate-600">Flow precision</p>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-brand-blue">600rpm</p>
+              <p class="mt-1 text-sm text-slate-600">Speed range up to</p>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-brand-blue">13#-18#</p>
+              <p class="mt-1 text-sm text-slate-600">Tubing sizes</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 class="text-base font-bold text-navy-950">Our Mission</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Make precision fluid transfer accessible — quality pumps and honest tubing at factory-direct prices, with selection support that actually helps.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 class="text-base font-bold text-navy-950">Our Promise</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Every pump head and tube tested before shipping. If a tube wears faster than expected in your application, we help you find the right material — not sell you another guess.</p>
+          </div>
+          <div class="rounded-2xl bg-navy-950 p-6 text-white">
+            <h3 class="text-base font-bold">Factory-Direct</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-300">From our manufacturing base in China to your lab bench or production line — no middlemen, no markup games.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <h2 class="text-center text-3xl font-extrabold tracking-tight text-navy-950">Why Buyers Choose PERIFLOW</h2>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Tube-Only Maintenance', desc: 'The tube is the only wear part. Replace it in minutes — no pump teardown, no specialist tools.' },
+          { title: 'Contamination-Free', desc: 'Fluid touches only the tube interior. Ideal for sterile, food and pharmaceutical processes.' },
+          { title: 'Selection Support', desc: 'Send your fluid and flow data — we recommend the right pump head and tubing material.' },
+          { title: 'OEM Flexibility', desc: 'Panel-mount, multi-channel, 12-24V. We build to your spec and your schedule.' },
+        ].map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-sm font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Work With a Pump Partner That Answers"
+    subtitle="Tell us about your application and get a pump recommendation within 24 hours."
+    ctaLabel="Contact Us"
+  />
+</Layout>

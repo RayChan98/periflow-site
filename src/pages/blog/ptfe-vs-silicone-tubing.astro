@@ -1,0 +1,217 @@
+---
+// 文章 1：PTFE vs 硅胶管 7 大差异 + 选型 4 步（SERP 对标 jihpump 对比文打法）
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'PTFE vs Silicone Tubing for Peristaltic Pumps: 7 Differences That Decide Performance';
+const date = 'August 20, 2026';
+const readTime = '11 min read';
+const related = [
+  { href: '/blog/how-long-does-pump-tubing-last/', title: 'How Long Does Peristaltic Pump Tubing Last?', readTime: '9 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing: 7 Differences', readTime: '11 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="PTFE vs silicone tubing for peristaltic pumps — 7 differences in elastic recovery, chemical resistance, temperature, transparency, cost, pump fit and life, plus a 4-step selection process."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">PTFE vs Silicone Tubing</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+        <p>
+          In a peristaltic pump, the tubing is the pump. It is the only part the fluid touches, the only wear item, and — for most applications — the component that decides whether your pump runs for a season or for years. Choose the wrong tube material and you will spend more on replacements, fight with chemical degradation, or end up with a tube that simply will not squeeze properly in the pump head.
+        </p>
+        <p>
+          Silicone and PTFE are the two names that come up most often when buyers spec pump tubing, and they are frequently treated as interchangeable. They are not. This guide breaks down the 7 differences that actually matter in a peristaltic application — elastic recovery, chemical resistance, temperature range, transparency, cost, pump compatibility and service life — then walks you through a 4-step selection process you can use on your next order.
+        </p>
+
+        <h2 id="at-a-glance">PTFE vs Silicone at a Glance</h2>
+        <p>
+          Before we go deep, here is the short version. Silicone is the workhorse of peristaltic pumping: it is elastic, transparent, inexpensive and easy to occlude, which is why it ships as the default tube on most laboratory and industrial pump heads. PTFE is the extreme-duty material: it shrugs off almost any chemical and handles very high temperatures, but solid PTFE is stiff and has poor elastic recovery, which is why standard PTFE tubing is rarely used directly in a roller head. The table below summarizes the 7 differences we cover in detail.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Silicone (Peristaltic Grade)</th>
+              <th>PTFE (Conventional / Solid)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Elastic recovery</td>
+              <td>Excellent — springs back after each roller pass</td>
+              <td>Poor — high compression set, limited rebound</td>
+            </tr>
+            <tr>
+              <td>Chemical resistance</td>
+              <td>Good with water, saline and mild acids/bases; attacked by hydrocarbons, ketones and strong solvents</td>
+              <td>Near-universal — inert to almost all chemicals at normal temperatures</td>
+            </tr>
+            <tr>
+              <td>Temperature range</td>
+              <td>Roughly −50 °C to +200 °C, grade dependent</td>
+              <td>Roughly −70 °C to +260 °C</td>
+            </tr>
+            <tr>
+              <td>Transparency</td>
+              <td>Transparent or translucent — fluid is visible</td>
+              <td>Opaque milky white</td>
+            </tr>
+            <tr>
+              <td>Relative cost per meter</td>
+              <td>Low — among the cheapest pump tubing materials</td>
+              <td>Several times higher</td>
+            </tr>
+            <tr>
+              <td>Peristaltic pump compatibility</td>
+              <td>Standard choice — easy occlusion, low roller load</td>
+              <td>Poor in solid form; PTFE-lined or composite variants for special duty</td>
+            </tr>
+            <tr>
+              <td>Typical service life in a pump head</td>
+              <td>Hundreds to thousands of hours depending on duty</td>
+              <td>Solid tube not normally run in standard heads; liner life varies</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="seven-differences">The 7 Key Differences, Explained</h2>
+
+        <h3>1. Elastic Recovery — Why Silicone Springs Back</h3>
+        <p>
+          A peristaltic pump works by squeezing a tube between rotating rollers and a fixed track. The tube must flatten to seal off the fluid, then spring back to full roundness so the next chamber can fill. That rebound is elastic recovery, and it is the single most important property for a peristaltic tube.
+        </p>
+        <p>
+          Silicone excels here. A well-formulated peristaltic-grade silicone at 50–65 Shore A recovers quickly after compression, which means consistent occlusion, steady flow and a tube that keeps its internal diameter over time. PTFE is the opposite: it is a stiff, low-friction plastic with a high compression set. Squeeze solid PTFE and it stays deformed, which breaks the seal and collapses flow. This is why, in practical terms, silicone — or another elastic rubber — is the material that runs inside standard roller heads, while PTFE plays a different role (see difference 6).
+        </p>
+
+        <h3>2. Chemical Resistance — The PTFE Advantage</h3>
+        <p>
+          This is where PTFE earns its reputation. Solid PTFE is inert to essentially all common industrial chemicals at normal operating temperatures — strong mineral acids, caustic alkalis, chlorinated solvents, aromatic hydrocarbons — with only a few exotic exceptions such as molten alkali metals and elemental fluorine at elevated temperature. If your process fluid destroys other tubing in days, PTFE is the material people turn to.
+        </p>
+        <p>
+          Silicone is far more selective. It handles water, saline, weak acids and bases, alcohols and many biological fluids well, which is why it dominates pharmaceutical, food and laboratory duty. But hydrocarbons (kerosene, toluene, mineral oil), ketones (acetone, MEK) and concentrated aggressive solvents can swell, soften or degrade silicone tubing, cutting its life dramatically. Always check a compatibility chart against your exact fluid at your operating temperature before ordering.
+        </p>
+
+        <h3>3. Temperature Range</h3>
+        <p>
+          Both materials are temperature-capable, but PTFE has the wider window. PTFE is commonly rated from roughly −70 °C to +260 °C continuous, with short excursions higher depending on the grade. Peristaltic-grade silicone is typically quoted from about −50 °C to +200 °C, with special high-temperature formulations available. In practice, the tube's temperature rating is only part of the story — the fluid temperature, ambient heat and the mechanical flexing of the rollers all combine, so at the upper end of silicone's range, tube life falls quickly. For continuous hot-fluid duty above roughly 150–180 °C, PTFE-based solutions deserve a serious look.
+        </p>
+
+        <h3>4. Transparency — Seeing the Fluid</h3>
+        <p>
+          Silicone tubing is transparent or translucent, and that is a quiet feature with real value: you can see air bubbles, crystallization, color change or contamination the moment it happens. In labs and food processing, visual inspection is a daily habit, and silicone makes it free. PTFE is opaque milky white — you cannot see through it, so you depend on sensors or manual checks. For applications where fluid visibility matters (filtration, dosing, cell culture), silicone's clarity is a decisive practical advantage.
+        </p>
+
+        <h3>5. Cost per Meter</h3>
+        <p>
+          Silicone is among the least expensive pump tubing materials on the market. A meter of small-diameter peristaltic-grade silicone costs a fraction of an equivalent PTFE-based tube, and because it is the standard consumable for most pump heads, it is stocked everywhere. PTFE — especially PTFE-lined peristaltic tubing, which adds a flexible outer layer to a chemical-resistant liner — costs several times more per meter. If your budget is a hard number, that gap matters: the PTFE-grade solution only pays for itself where the chemistry genuinely demands it.
+        </p>
+
+        <h3>6. Pump Compatibility — What Actually Runs in a Roller Head</h3>
+        <p>
+          This is the difference that catches the most first-time buyers. Standard solid PTFE tubing is generally not suitable for direct use in a peristaltic pump head: it is too rigid to occlude reliably, and its poor recovery means the tube loses its shape after the first few revolutions. Manufacturers that offer "PTFE for peristaltic duty" usually mean one of two things: a PTFE-lined tube (a flexible outer elastomer bonded to a thin PTFE liner, so the pump squeezes the outside while the fluid touches PTFE), or a convoluted/bellows-style PTFE design for very specialized transfer duty. Both exist, both work, and both cost and behave differently from a plain silicone tube.
+        </p>
+        <p>
+          Silicone, by contrast, is the compatibility baseline: nearly every pump head on the market has a silicone tube size that fits it, and the occlusion force is designed around elastomer behavior. If you are replacing tubes on an existing pump, matching the exact size, wall thickness and durometer is more important than the brand.
+        </p>
+
+        <h3>7. Service Life in the Pump</h3>
+        <p>
+          Under the same gentle duty — low back pressure, moderate speed, compatible fluid — a 50–65 Shore A silicone tube commonly runs for hundreds to a few thousand hours before replacement. Aggressive duty (high pressure, abrasive media, 600 rpm continuous) can cut that to a few hundred hours or less. PTFE-lined tubes trade differently: the PTFE liner gives outstanding chemical and temperature endurance, but the flexible outer layer still flexes millions of times, so the liner can crack or the tube can fail at the bond line under heavy flexing. There is no universal winner on life — it is material chemistry plus mechanical duty, which is exactly why the selection process below exists.
+        </p>
+
+        <h2 id="choose-silicone">When to Choose Silicone Tubing</h2>
+        <ul>
+          <li>Your fluid is water, saline, buffer, media, mild acids or bases, or biological samples.</li>
+          <li>You want to see the fluid in the line for bubble or contamination checks.</li>
+          <li>Operating temperature stays within roughly −40 °C to +150 °C in practice.</li>
+          <li>You need a low-cost consumable that is in stock and fits any standard head.</li>
+          <li>You value easy occlusion: gentle roller load, low start-up torque, smooth flow.</li>
+        </ul>
+
+        <h2 id="choose-ptfe">When You Need PTFE-Grade Chemical Resistance</h2>
+        <ul>
+          <li>Your fluid attacks silicone — strong solvents, concentrated acids, hydrocarbons, ketones.</li>
+          <li>Continuous duty above roughly 150–180 °C, or aggressive chemical cleaning cycles (CIP/SIP).</li>
+          <li>You need maximum purity: PTFE leaches almost nothing into ultrapure or aggressive media.</li>
+          <li>You are willing to pay several times more per meter and verify head compatibility with a lined tube.</li>
+        </ul>
+
+        <h2 id="selection">A 4-Step Selection Process for Your Application</h2>
+        <p>Use this sequence on your next tubing order — it takes five minutes and prevents the two most common mistakes (chemical incompatibility and wrong durometer):</p>
+        <ol>
+          <li>
+            <strong>Confirm chemical compatibility first.</strong> Write down your exact fluid, its concentration and its temperature, then check a manufacturer compatibility chart. If the chart shows silicone as "fair" or worse for your fluid, move to PTFE-lined or another elastomer (EPDM, Norprene-type TPE) before you spend a dollar.
+          </li>
+          <li>
+            <strong>Check the pressure and temperature window.</strong> Compare your back pressure and fluid temperature against the tube's rated maximums — and remember that running near the maximum shortens life. If you need more than roughly 5–7 bar continuous, peristaltic tubing in general becomes the wrong tool, regardless of material.
+          </li>
+          <li>
+            <strong>Match the durometer to your pump head.</strong> Softer tubes (around 50–60 Shore A) occlude easily and suit low-torque heads and gentle duty; harder grades (65–80 Shore A) resist pressure and abrasion better but need stronger rollers. Use the head manufacturer's recommended hardness range — that is the number that keeps flow accurate.
+          </li>
+          <li>
+            <strong>Balance life against cost for your duty cycle.</strong> Estimate continuous hours per day and speed. If you run 24/7 at high speed, buy the longest-life material that is chemically compatible; if you run intermittently, the cheapest compatible tube is often the smartest economics. Order a small lot first, log actual hours, then scale.
+          </li>
+        </ol>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Can I use PTFE tubing in a standard peristaltic pump head?</h3>
+        <p>Solid PTFE tubing generally cannot — it is too rigid to occlude and does not recover its shape, so flow collapses quickly. If you need PTFE chemical resistance in a peristaltic pump, use a PTFE-lined flexible tube and confirm it matches your pump head's occlusion force and tube size.</p>
+        <h3>Which lasts longer, silicone or PTFE-lined tubing?</h3>
+        <p>There is no fixed winner. Silicone at gentle duty often outlasts expectations; PTFE-lined tubes excel in aggressive chemistry where silicone would fail in days. Life is decided by pressure, speed, media and temperature — not by material name alone.</p>
+        <h3>Is silicone tubing food- or pharma-safe?</h3>
+        <p>Many peristaltic-grade silicones are manufactured to food and pharmaceutical standards and are autoclavable. Confirm the specific grade and any certificates with the supplier before using in regulated processes.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing range</a> and <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Not Sure Which Tubing Fits Your Fluid?"
+    subtitle="Send us the media, concentration, temperature and flow rate — we will recommend the tube material and size within 24 hours."
+  />
+</Layout>

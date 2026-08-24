@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'PERIFLOW Services — OEM Manufacturing, Wholesale Distribution & Technical Support';
+const description = 'PERIFLOW services for pump buyers worldwide — OEM/ODM custom pump manufacturing, wholesale distribution with volume pricing, and application-driven technical support.';
+
+const services = [
+  { href: '/services/oem-odm/', title: 'OEM / ODM Manufacturing', desc: 'Custom peristaltic pumps built to your drawings — panel-mount, multi-channel and 12-24V designs, from prototype to mass production.' },
+  { href: '/services/wholesale-distribution/', title: 'Wholesale Distribution', desc: 'Factory-direct volume pricing, sample programs and dependable export logistics for distributors and resellers.' },
+  { href: '/services/technical-support/', title: 'Technical Support', desc: 'Selection engineering, application testing and responsive after-sales — from fluid data to the right tubing and pump head.' },
+];
+
+const why = [
+  { title: 'Factory-Direct', desc: 'We manufacture the pumps we sell — no middlemen, better pricing and direct engineering access.' },
+  { title: 'One Partner, Full Range', desc: 'Pump heads, tubing, complete pumps and custom designs from a single supplier simplifies your supply chain.' },
+  { title: 'Fast Response', desc: 'Quotes within 24 hours and application recommendations driven by your actual fluid data.' },
+  { title: 'Global Shipping', desc: 'We export to 40+ countries with reliable packaging, documentation and lead-time visibility.' },
+];
+
+const faqs = [
+  { q: 'How do I start a project with PERIFLOW?', a: 'Send an inquiry with your application details — liquid, flow rate, pressure, power supply and volumes. We respond within 24 hours with a recommendation or quotation.' },
+  { q: 'Do you offer samples before a bulk order?', a: 'Yes. Sample programs are available for wholesale and OEM customers so you can validate the pump and tubing in your own process.' },
+  { q: 'Can you build a custom pump for our equipment?', a: 'Yes. Our OEM/ODM service covers panel-mount, multi-channel and 12-24V designs developed from your drawings and specifications.' },
+  { q: 'What are your minimum order quantities?', a: 'MOQs vary by product and configuration. Contact us with your target volumes and we will confirm the MOQ and tier pricing.' },
+  { q: 'How fast is delivery?', a: 'Standard products typically ship within days; custom OEM projects follow an agreed prototype and production schedule with clear milestones.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <span class="text-slate-200">Services</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">SERVICES</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Pump Sourcing & Support, All in One Place</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Whether you need custom pumps manufactured to your spec, volume pricing for distribution, or an engineer who actually helps you select the right pump — PERIFLOW has you covered.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request a Quote</button>
+        <a href="/contact/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service cards -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">OUR SERVICES</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Three Ways We Work With You</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {services.map((s) => (
+          <a href={s.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-lg font-bold text-navy-950">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">Learn more <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">WHY PERIFLOW</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Why Buyers Work With Us</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {why.map((w) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-navy-950">{w.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Working With PERIFLOW — Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Start Your Sourcing Project Today"
+    subtitle="Tell us what you need — custom pumps, volume pricing or a selection recommendation — and get a response within 24 hours."
+  />
+</Layout>

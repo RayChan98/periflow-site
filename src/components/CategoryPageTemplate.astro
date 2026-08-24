@@ -1,0 +1,104 @@
+---
+// Products 品类页模板 v2（2026-08-21 升级：chapters slot + FAQ + 可配置推荐 + 博客引导）
+const { title, kw, desc, points, longtail, faqs = [], recommended = [], blogLinks = [] } = Astro.props;
+---
+
+<section class="bg-navy-950 text-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <nav class="text-sm text-slate-400">
+      <a href="/" class="hover:text-white">Home</a> <span class="mx-1">/</span>
+      <a href="/products/" class="hover:text-white">Products</a> <span class="mx-1">/</span>
+      <span class="text-slate-200">{title}</span>
+    </nav>
+    <h1 class="mt-6 text-4xl font-extrabold tracking-tight">{title}</h1>
+    <p class="mt-3 max-w-2xl text-lg text-slate-300">{desc}</p>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <div class="aspect-video w-full bg-gradient-to-br from-navy-800 to-navy-950"></div>
+        <p class="border-t border-slate-100 px-5 py-3 text-sm text-slate-500">Product images coming soon — request samples or the full catalog for photos.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-extrabold text-navy-950">Why {title}</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600">{desc}</p>
+        <ul class="mt-6 space-y-3">
+          {points.map((p) => (
+            <li class="flex items-start gap-3 rounded-xl bg-slate-50 p-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-green"></span>
+              <span class="text-sm text-slate-700">{p}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- 博客引导（Awareness 漏斗：品类页 → 深度指南） -->
+        {blogLinks.length > 0 && (
+          <div class="mt-6 rounded-xl border border-brand-blue/20 bg-brand-blue/5 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wider text-brand-blue">Deep Dive Guide</p>
+            {blogLinks.map((b) => (
+              <a href={b.href} class="mt-1 block text-sm font-semibold text-navy-950 transition hover:text-brand-blue">{b.title} →</a>
+            ))}
+          </div>
+        )}
+
+        <button type="button" data-quote-open class="mt-8 inline-block rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white transition hover:bg-orange-600">Get a Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 内容章节（决策内容：选型/对比/应用 —— 竞对品类页普遍缺失） -->
+<slot name="chapters" />
+
+<!-- 词表驱动的真实长尾词 -->
+<section class="bg-slate-50">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <p class="text-sm font-semibold text-brand-blue">POPULAR SEARCHES</p>
+    <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">What Buyers Search in This Category</h2>
+    <div class="mt-6 flex flex-wrap gap-2">
+      {longtail.map((t) => (
+        <span class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">{t}</span>
+      ))}
+    </div>
+    <p class="mt-6 text-xs text-slate-400">* Search terms collected from Semrush competitor keyword data — contact us to discuss matching products.</p>
+  </div>
+</section>
+
+<!-- FAQ（买家决策问答） -->
+{faqs.length > 0 && (
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4 lg:grid-cols-2">
+        {faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.q}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 推荐产品 -->
+<section class="bg-slate-50">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <h2 class="text-2xl font-extrabold text-navy-950">Recommended Products</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      {recommended.map((r) => (
+        <a href={r.href} class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="aspect-video bg-gradient-to-br from-navy-800 to-navy-950"></div>
+          <div class="p-5">
+            <p class="text-sm font-bold text-navy-950">{r.title}</p>
+            <p class="mt-1 text-xs text-slate-500">{r.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

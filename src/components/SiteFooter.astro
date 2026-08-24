@@ -1,0 +1,72 @@
+---
+const productLinks = [
+  { href: '/products/pump-heads/', label: 'Pump Heads' },
+  { href: '/products/tubing/', label: 'Pump Tubing' },
+  { href: '/products/benchtop-pumps/', label: 'Benchtop Pumps' },
+  { href: '/products/dosing-pumps/', label: 'Dosing Pumps' },
+  { href: '/products/oem-pumps/', label: 'OEM Pumps' },
+];
+const companyLinks = [
+  { href: '/applications/laboratory/', label: 'Laboratory' },
+  { href: '/applications/chemical-dosing/', label: 'Chemical Dosing' },
+  { href: '/services/', label: 'Services' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/faq/', label: 'FAQ' },
+  { href: '/about/', label: 'About Us' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<footer class="bg-navy-950 text-slate-300">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <div class="grid gap-10 md:grid-cols-4">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-xl font-extrabold tracking-tight text-white">PERI<span class="text-cta-orange">FLOW</span></span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-slate-400">
+          Peristaltic pump manufacturer. Pump heads, tubing and laboratory pumps — factory-direct for distributors and OEMs.
+        </p>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Products</h3>
+        <ul class="mt-4 space-y-2">
+          {productLinks.map((l) => (
+            <li><a href={l.href} class="text-sm transition hover:text-white">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h3>
+        <ul class="mt-4 space-y-2">
+          {companyLinks.map((l) => (
+            <li><a href={l.href} class="text-sm transition hover:text-white">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mailto:cj226144@gmail.com" class="transition hover:text-white">cj226144@gmail.com</a></li>
+          <li><a href="https://wa.me/8613710860663" class="transition hover:text-white" rel="noopener">+86 137 1086 0663</a></li>
+          <li class="text-slate-400">Mon–Sat 9:00–18:00 (GMT+8)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
+      <p>© {new Date().getFullYear()} PERIFLOW. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="/privacy/" class="transition hover:text-white">Privacy Policy</a>
+        <a href="/terms/" class="transition hover:text-white">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,356 @@
+---
+// PERIFLOW Mega Menu 导航 + Topbar（宽面板 + icon + 副标题）
+const products = [
+  { href: '/products/', label: 'All Products', icon: '📦', desc: 'Full pump catalog overview' },
+  { href: '/products/pump-heads/', label: 'Pump Heads', icon: '⚙️', desc: 'YZ15/YZ35/LP series, 0.1-600rpm' },
+  { href: '/products/tubing/', label: 'Pump Tubing', icon: '🧪', desc: 'Silicone & PTFE, 13#-18# sizes' },
+  { href: '/products/benchtop-pumps/', label: 'Benchtop Pumps', icon: '🔬', desc: 'Laboratory variable-speed pumps' },
+  { href: '/products/dosing-pumps/', label: 'Dosing Pumps', icon: '💧', desc: 'Chemical dosing & metering' },
+  { href: '/products/oem-pumps/', label: 'OEM Pumps', icon: '🏭', desc: 'Custom pump solutions' },
+];
+
+const applications = [
+  { href: '/applications/laboratory/', label: 'Laboratory', icon: '🔬', desc: 'Cell culture & media dispensing' },
+  { href: '/applications/chemical-dosing/', label: 'Chemical Dosing', icon: '🧪', desc: 'Water treatment & dosing' },
+  { href: '/applications/food-beverage/', label: 'Food & Beverage', icon: '🍶', desc: 'Hygienic transfer & filling' },
+  { href: '/applications/biopharma/', label: 'Biopharma', icon: '💊', desc: 'Sterile fluid handling' },
+];
+
+const aboutLinks = [
+  { href: '/about/', label: 'About Us', icon: '🏢', desc: 'Company story & mission' },
+  { href: '/about/#factory', label: 'Factory & Facility', icon: '🏭', desc: 'Production lines' },
+  { href: '/about/#quality', label: 'Quality Control', icon: '✅', desc: 'Testing & inspection' },
+  { href: '/about/#process', label: 'Production Process', icon: '⚙️', desc: 'QC gates' },
+  { href: '/about/#certificates', label: 'Certificates & Compliance', icon: '📜', desc: 'CE, ISO, RoHS' },
+];
+
+const servicesLinks = [
+  { href: '/services/', label: 'All Services', icon: '🛠️', desc: 'Full service overview' },
+  { href: '/services/oem-odm/', label: 'OEM & ODM', icon: '🏷️', desc: 'Private-label pump manufacturing' },
+  { href: '/services/wholesale-distribution/', label: 'Wholesale & Distribution', icon: '📦', desc: 'Bulk & trade pricing' },
+  { href: '/services/technical-support/', label: 'Technical Support', icon: '🔧', desc: 'Selection & tubing guidance' },
+];
+---
+
+<header class="sticky top-0 z-[150] border-b border-white/10 bg-[#081527] text-white shadow-lg shadow-navy-950/10">
+  <!-- ═══ Topbar ═══ -->
+  <div class="border-b border-white/10 bg-navy-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+
+      <!-- 移动版 Topbar -->
+      <div class="flex h-12 items-center justify-between lg:hidden">
+        <a href="/" class="inline-flex items-center" aria-label="PERIFLOW home">
+          <span class="text-lg font-extrabold tracking-tight">PERI<span class="text-cta-orange">FLOW</span></span>
+        </a>
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="grid h-9 w-9 place-items-center rounded-full border border-white/15 transition hover:bg-white/10" data-search-open aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+          </button>
+          <button type="button" data-menu-btn class="grid h-9 w-9 place-items-center rounded-full border border-white/15 transition hover:bg-white/10" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg data-icon-open xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+            <svg data-icon-close xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="hidden h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 桌面版 Topbar -->
+      <div class="hidden h-10 items-center justify-between text-xs text-slate-300 lg:flex">
+        <div class="flex items-center gap-4">
+          <a href="mailto:cj226144@gmail.com" class="inline-flex items-center gap-1.5 transition hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-3.5 w-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+            cj226144@gmail.com
+          </a>
+          <a href="https://wa.me/8613710860663" class="inline-flex items-center gap-1.5 transition hover:text-white" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-3.5 w-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.76 9.76 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+            +86 137 1086 0663
+          </a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="button" class="grid h-7 w-7 place-items-center rounded-full border border-white/15 transition hover:bg-white/10" data-search-open aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-3.5 w-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+          </button>
+          <button type="button" data-quote-open class="inline-flex items-center gap-1 rounded-full bg-cta-orange px-3 py-1 font-semibold text-white transition hover:bg-orange-600">Get a Quote</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 主导航（仅桌面） -->
+  <div class="hidden mx-auto h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:flex">
+    <a href="/" class="flex items-center gap-2" aria-label="PERIFLOW home">
+      <span class="text-xl font-extrabold tracking-tight">PERI<span class="text-cta-orange">FLOW</span></span>
+    </a>
+
+    <nav class="items-center gap-1 lg:flex" aria-label="Main">
+      <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">Home</a>
+
+      <!-- Products MegaMenu -->
+      <div class="group relative">
+        <button type="button" class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5 transition group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </button>
+        <div class="invisible absolute left-1/2 top-full z-50 w-[600px] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1">
+            {products.map((p) => (
+              <a href={p.href} class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-slate-50">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-lg">{p.icon}</span>
+                <span>
+                  <span class="block text-sm font-semibold text-navy-950">{p.label}</span>
+                  <span class="block text-xs text-slate-500">{p.desc}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Applications MegaMenu -->
+      <div class="group relative">
+        <button type="button" class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">
+          Applications
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5 transition group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </button>
+        <div class="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1">
+            {applications.map((i) => (
+              <a href={i.href} class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-slate-50">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-lg">{i.icon}</span>
+                <span>
+                  <span class="block text-sm font-semibold text-navy-950">{i.label}</span>
+                  <span class="block text-xs text-slate-500">{i.desc}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- About MegaMenu -->
+      <div class="group relative">
+        <button type="button" class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5 transition group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </button>
+        <div class="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1">
+            {aboutLinks.map((i) => (
+              <a href={i.href} class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-slate-50">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-lg">{i.icon}</span>
+                <span>
+                  <span class="block text-sm font-semibold text-navy-950">{i.label}</span>
+                  <span class="block text-xs text-slate-500">{i.desc}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Services MegaMenu -->
+      <div class="group relative">
+        <button type="button" class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5 transition group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </button>
+        <div class="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1">
+            {servicesLinks.map((i) => (
+              <a href={i.href} class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-slate-50">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-lg">{i.icon}</span>
+                <span>
+                  <span class="block text-sm font-semibold text-navy-950">{i.label}</span>
+                  <span class="block text-xs text-slate-500">{i.desc}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {[
+        { href: '/blog/', label: 'Blog' },
+        { href: '/faq/', label: 'FAQ' },
+        { href: '/contact/', label: 'Contact' },
+      ].map((item) => (
+        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <!-- ═══ 移动端侧滑抽屉 ═══ -->
+  <div id="mobile-overlay" class="fixed inset-0 z-[95] hidden bg-navy-950/60 backdrop-blur-sm lg:hidden" data-overlay></div>
+  <div id="mobile-menu" class="fixed inset-0 z-[100] flex -translate-x-full flex-col bg-navy-950 text-white transition-transform duration-300 ease-in-out lg:hidden" data-mobile-drawer>
+    <div class="flex h-14 shrink-0 items-center justify-between border-b border-white/10 px-4">
+      <a href="/" class="inline-flex items-center" aria-label="PERIFLOW home">
+        <span class="text-lg font-extrabold tracking-tight">PERI<span class="text-cta-orange">FLOW</span></span>
+      </a>
+      <button type="button" class="grid h-9 w-9 place-items-center rounded-full border border-white/15 transition hover:bg-white/10" data-menu-close aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto overscroll-contain px-4 py-3">
+      <nav class="space-y-1.5" aria-label="Mobile">
+        <a href="/" class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10"><span>🏠</span> Home</a>
+
+        <details class="group rounded-lg bg-white/5" data-acc data-label="Products">
+          <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+            <span class="flex items-center gap-2"><span>📦</span> Products</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+          </summary>
+          <div class="grid grid-cols-2 gap-1.5 border-t border-white/10 bg-white/[0.03] p-2">
+            {products.map((p) => (
+              <a href={p.href} class="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-300 hover:bg-white/10 hover:text-white"><span>{p.icon}</span> {p.label}</a>
+            ))}
+          </div>
+        </details>
+
+        <details class="group rounded-lg bg-white/5" data-acc data-label="Applications">
+          <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+            <span class="flex items-center gap-2"><span>🌍</span> Applications</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+          </summary>
+          <div class="grid grid-cols-2 gap-1.5 border-t border-white/10 bg-white/[0.03] p-2">
+            {applications.map((i) => (
+              <a href={i.href} class="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-300 hover:bg-white/10 hover:text-white"><span>{i.icon}</span> {i.label}</a>
+            ))}
+          </div>
+        </details>
+
+        <details class="group rounded-lg bg-white/5" data-acc data-label="Services">
+          <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+            <span class="flex items-center gap-2"><span>🛠️</span> Services</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+          </summary>
+          <div class="grid grid-cols-2 gap-1.5 border-t border-white/10 bg-white/[0.03] p-2">
+            {servicesLinks.map((p) => (
+              <a href={p.href} class="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-300 hover:bg-white/10 hover:text-white"><span>{p.icon}</span> {p.label}</a>
+            ))}
+          </div>
+        </details>
+
+        <details class="group rounded-lg bg-white/5" data-acc data-label="About">
+          <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+            <span class="flex items-center gap-2"><span>🏢</span> About</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+          </summary>
+          <div class="grid grid-cols-2 gap-1.5 border-t border-white/10 bg-white/[0.03] p-2">
+            {aboutLinks.map((i) => (
+              <a href={i.href} class="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-300 hover:bg-white/10 hover:text-white"><span>{i.icon}</span> {i.label}</a>
+            ))}
+          </div>
+        </details>
+
+        <div class="space-y-1.5 pt-1">
+          {[
+            { href: '/blog/', label: 'Blog', icon: '📰' },
+            { href: '/faq/', label: 'FAQ', icon: '❓' },
+            { href: '/contact/', label: 'Contact', icon: '✉️' },
+          ].map((item) => (
+            <a href={item.href} class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2.5 text-sm font-semibold text-white hover:bg-white/10"><span>{item.icon}</span> {item.label}</a>
+          ))}
+        </div>
+      </nav>
+    </div>
+    <div class="shrink-0 border-t border-white/10 bg-navy-950/95 px-4 py-3 backdrop-blur">
+      <button type="button" data-quote-open class="block w-full rounded-lg bg-cta-orange px-4 py-3 text-center text-sm font-semibold text-white shadow-lg transition hover:bg-orange-600">
+        Get a Quote →
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // ═══ 移动端侧滑抽屉（汉堡↔X 切换 + 遮罩 + body 锁滚动） ═══
+  const btn = document.querySelector('[data-menu-btn]');
+  const closeBtn = document.querySelector('[data-menu-close]');
+  const drawer = document.querySelector('[data-mobile-drawer]');
+  const overlay = document.querySelector('[data-overlay]');
+  const iconOpen = document.querySelector('[data-icon-open]');
+  const iconClose = document.querySelector('[data-icon-close]');
+
+  function openMenu() {
+    drawer?.classList.remove('-translate-x-full');
+    overlay?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    btn?.setAttribute('aria-expanded', 'true');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    applyCurrentPageHighlight();
+  }
+
+  function applyCurrentPageHighlight() {
+    const path = window.location.pathname;
+    drawer?.querySelectorAll('a[href]').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      const isMatch =
+        (href !== '/' && path.startsWith(href)) ||
+        (href === '/' && path === '/');
+      if (isMatch) {
+        a.classList.add('bg-cta-orange/20', 'text-cta-orange', 'font-semibold');
+        const parentAcc = a.closest('details[data-acc]');
+        if (parentAcc && !parentAcc.open) {
+          parentAcc.setAttribute('open', '');
+          parentAcc.querySelector('summary')?.classList.add('bg-white/10', 'text-cta-orange');
+        }
+      }
+    });
+  }
+
+  function closeMenu() {
+    drawer?.classList.add('-translate-x-full');
+    overlay?.classList.add('hidden');
+    document.body.style.overflow = '';
+    btn?.setAttribute('aria-expanded', 'false');
+    iconClose?.classList.add('hidden');
+    iconOpen?.classList.remove('hidden');
+  }
+
+  btn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+  drawer?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+
+  // ═══ 折叠互斥 + 打开项高亮 + 状态保持 ═══
+  const STORAGE_KEY = 'pf-mobile-acc-open';
+  const accs = drawer?.querySelectorAll('details[data-acc]') || [];
+
+  accs.forEach((acc) => {
+    const summary = acc.querySelector('summary');
+    summary?.addEventListener('click', () => {
+      if (!acc.open) {
+        accs.forEach((other) => {
+          if (other !== acc && other.open) {
+            other.removeAttribute('open');
+            other.querySelector('summary')?.classList.remove('bg-white/10', 'text-cta-orange');
+          }
+        });
+      }
+    });
+    acc.addEventListener('toggle', () => {
+      if (acc.open) {
+        summary?.classList.add('bg-white/10', 'text-cta-orange');
+        localStorage.setItem(STORAGE_KEY, acc.dataset.label || '');
+      } else {
+        summary?.classList.remove('bg-white/10', 'text-cta-orange');
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    });
+  });
+
+  btn?.addEventListener('click', () => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    accs.forEach((acc) => {
+      if (saved && saved === (acc.dataset.label || '') && !acc.open) {
+        acc.setAttribute('open', '');
+        acc.querySelector('summary')?.classList.add('bg-white/10', 'text-cta-orange');
+      }
+    });
+  });
+</script>

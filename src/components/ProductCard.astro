@@ -1,0 +1,25 @@
+---
+const { title, description, href, tag } = Astro.props;
+---
+
+<a href={href} class="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+  <div class="aspect-video w-full bg-navy-900">
+    <svg viewBox="0 0 400 225" class="h-full w-full" role="img" aria-label={title + ' placeholder'}>
+      <rect width="400" height="225" fill="#102A45"/>
+      <circle cx="200" cy="112" r="48" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+      <circle cx="200" cy="112" r="28" fill="none" stroke="#10B981" stroke-width="2.5"/>
+      <rect x="200" y="104" width="22" height="16" fill="#F97316"/>
+      <text x="200" y="185" text-anchor="middle" fill="#64748B" font-size="14" font-family="sans-serif">{tag ?? 'PLACEHOLDER'}</text>
+    </svg>
+  </div>
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-navy-950 transition group-hover:text-brand-blue">{title}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
+    <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cta-orange">
+      View Details
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 transition group-hover:translate-x-0.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+      </svg>
+    </span>
+  </div>
+</a>

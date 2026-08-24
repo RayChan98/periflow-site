@@ -1,0 +1,166 @@
+---
+// 产品详情页模板 v2（2026-08-21 升级：支持内容章节 slot + FAQ + 信任信号）
+const { model, series, category, tagline, description, specs, features, applications, image, faqs = [], trustPoints = [] } = Astro.props;
+---
+
+<section class="bg-navy-950 text-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <p class="text-sm font-semibold text-brand-green">{category}</p>
+    <h1 class="mt-2 text-4xl font-extrabold tracking-tight">{model}</h1>
+    <p class="mt-3 max-w-2xl text-lg text-slate-300">{tagline}</p>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="grid gap-12 lg:grid-cols-2">
+      <!-- 产品图 -->
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        {image ? (
+          <img src={image} alt={model + ' — ' + series} class="h-full w-full object-cover" loading="lazy" />
+        ) : (
+          <svg viewBox="0 0 600 500" class="h-full w-full" role="img" aria-label={model + ' placeholder image'}>
+            <rect width="600" height="500" fill="#102A45"/>
+            <circle cx="300" cy="220" r="100" fill="none" stroke="#2563EB" stroke-width="3"/>
+            <circle cx="300" cy="220" r="60" fill="none" stroke="#10B981" stroke-width="3"/>
+            <circle cx="300" cy="220" r="14" fill="#F97316"/>
+            <text x="300" y="400" text-anchor="middle" fill="#64748B" font-size="18" font-family="sans-serif">{series} (PLACEHOLDER)</text>
+          </svg>
+        )}
+      </div>
+
+      <!-- 产品简介 -->
+      <div>
+        <h2 class="text-2xl font-extrabold text-navy-950">Product Overview</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600">{description}</p>
+
+        <h3 class="mt-8 text-lg font-bold text-navy-950">Key Features</h3>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          {features.map((f) => (
+            <li class="flex items-start gap-2 rounded-lg bg-slate-50 p-3">
+              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-green/10 text-brand-green">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-3.5 w-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </span>
+              <span class="text-sm text-slate-700">{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="mt-8 text-lg font-bold text-navy-950">Applications</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {applications.map((a) => (
+            <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-700">{a}</span>
+          ))}
+        </div>
+
+        <!-- 信任信号（认证/质保/交期） -->
+        {trustPoints.length > 0 && (
+          <div class="mt-8 grid gap-2 rounded-xl bg-navy-950 p-4">
+            {trustPoints.map((t) => (
+              <p class="flex items-center gap-2 text-sm text-slate-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4 text-brand-green">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {t}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 内容章节（差异化：为什么选/选型表/存储数学/应用场景 —— 竞对没有的决策内容） -->
+<slot name="chapters" />
+
+<!-- 技术规格表（结构就位，内容占位） -->
+<section class="bg-slate-50">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <h2 class="text-2xl font-extrabold text-navy-950">Technical Specifications</h2>
+    <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-navy-950 text-white">
+          <tr>
+            <th class="px-6 py-3.5 font-semibold">Item</th>
+            <th class="px-6 py-3.5 font-semibold">Specification</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          {specs.map(([item, value], i) => (
+            <tr class:list={['transition hover:bg-slate-50', i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white']}>
+              <td class="px-6 py-3 font-medium text-navy-950">{item}</td>
+              <td class="px-6 py-3 text-slate-600">{value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-xs text-slate-400">* Specifications subject to change. Contact us for the current datasheet.</p>
+  </div>
+</section>
+
+<!-- FAQ（买家决策问答，竞对产品页普遍缺失） -->
+{faqs.length > 0 && (
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4 lg:grid-cols-2">
+        {faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.q}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 实拍证据：夜视效果（真实素材） -->
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="text-sm font-semibold text-brand-blue">REAL FOOTAGE</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">See It in Action</h2>
+        <p class="mt-2 max-w-2xl text-slate-600">PERIFLOW peristaltic pump heads, tubing and complete pump systems — built for precision, contamination-free fluid transfer.</p>
+      </div>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-navy-950">
+        <video controls playsinline preload="none" poster="/logo/logo-icon.svg" class="aspect-video w-full object-cover">
+          <source src="/videos/night-effect.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p class="px-5 py-3 text-sm font-medium text-white">Full-Color at Night — real low-light recording</p>
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-navy-950">
+        <video controls playsinline preload="none" poster="/logo/logo-icon.svg" class="aspect-video w-full object-cover">
+          <source src="/videos/color-effect.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p class="px-5 py-3 text-sm font-medium text-white">Color Night Vision — detail you can identify</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 询盘区 -->
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="flex flex-col items-center justify-between gap-6 rounded-2xl bg-navy-950 p-8 text-center sm:p-10 lg:flex-row lg:text-left">
+      <div>
+        <h3 class="text-2xl font-extrabold text-white">Interested in {model}?</h3>
+        <p class="mt-2 text-slate-300">Factory-direct pricing, OEM/ODM options and lead times — send your spec and volume, get a quote within 24 hours.</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white transition hover:bg-orange-600">Request a Quote</button>
+        <button type="button" data-quote-open class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Technical Support & Pump Selection — Fluid Data to the Right Pump';
+const description = 'PERIFLOW technical support — pump selection engineering from your fluid data, application testing, and responsive after-sales service for peristaltic pumps and tubing.';
+
+const offers = [
+  { title: 'Pump Selection Engineering', desc: 'Send us your fluid data — liquid, viscosity, flow rate, pressure, temperature — and we recommend the right pump head, drive and tubing.' },
+  { title: 'Tubing & Chemical Compatibility', desc: 'We match tubing chemistry to your liquid: platinum-cured silicone for aqueous, PTFE-lined for aggressive solvents and chemicals.' },
+  { title: 'Application Testing', desc: 'Flow rate verification and duty-cycle testing against your real application parameters before you commit.' },
+  { title: 'Control Integration Advice', desc: 'Guidance on analog, RS485 and trigger control wiring to integrate pumps with your PLC, controller or lab system.' },
+  { title: 'Installation & Commissioning', desc: 'Setup guidance, tube-loading best practice and troubleshooting checklists to get you running fast.' },
+  { title: 'Responsive After-Sales', desc: 'Spare tubing, spare parts and technical answers — with documented response times and clear ownership of issues.' },
+];
+
+const steps = [
+  { title: 'Selection — From Fluid Data to Spec', desc: 'Share liquid, viscosity, flow rate, pressure and power supply. Our engineers return a recommendation with pump head, tubing and drive.' },
+  { title: 'Testing — Verify Before You Buy', desc: 'We run flow and endurance checks on the recommended configuration and, if needed, send samples for your own validation.' },
+  { title: 'After-Sales — Support That Lasts', desc: 'Commissioning guidance, tube-life optimization and spare supply keep your pumps running long after delivery.' },
+];
+
+const products = [
+  { href: '/products/pump-heads/', title: 'Pump Heads', desc: 'YZ15/YZ35/LP series heads selected to your flow range.' },
+  { href: '/products/tubing/', title: 'Pump Tubing', desc: 'Silicone and PTFE-lined tubing matched to your chemical.' },
+  { href: '/products/benchtop-pumps/', title: 'Benchtop Pumps', desc: 'Complete lab pumps with precise, controllable speed.' },
+  { href: '/products/dosing-pumps/', title: 'Dosing Pumps', desc: 'Metering pumps for process dosing up to 6 bar.' },
+];
+
+const faqs = [
+  { q: 'What information do you need to recommend a pump?', a: 'The liquid (and its viscosity), required flow rate, discharge pressure, operating temperature and power supply. That is enough for a solid first recommendation.' },
+  { q: 'How do I choose between silicone and PTFE-lined tubing?', a: 'Platinum-cured silicone suits most aqueous and biological fluids. PTFE-lined tubing is for aggressive chemicals and solvents that degrade silicone. We confirm compatibility from your fluid data.' },
+  { q: 'Do you test the pump for my application before I buy?', a: 'Yes. We can verify flow rates and run duty-cycle checks on the recommended configuration, and samples can be sent for your own testing.' },
+  { q: 'Can you help with control integration?', a: 'Our pumps support analog speed input, external trigger and RS485. We provide wiring guidance and communication protocol details for your controller.' },
+  { q: 'What after-sales support do you provide?', a: 'Technical support covers installation guidance, troubleshooting, tube-life optimization and spare parts supply — with a named contact for your account.' },
+  { q: 'How do I extend pump tube life?', a: 'Keep speed within the recommended range, avoid over-pressure, and follow the tube-loading and lubrication guidance we provide with each order.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/services/" class="transition hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-slate-200">Technical Support</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">SERVICES</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Technical Support & Pump Selection</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Choosing the right pump should not be guesswork. Send us your fluid data and our engineers recommend the right pump head, tubing and drive — then support you from testing to after-sales.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Get Selection Support</button>
+        <a href="/contact/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">Contact an Engineer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we offer -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">WHAT WE OFFER</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Engineering Support at Every Stage</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {offers.map((o) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-blue/10 text-xl">✓</span>
+            <h3 class="mt-4 text-lg font-bold text-navy-950">{o.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{o.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process steps -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">HOW IT WORKS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">From Your Fluid Data to a Running Pump</h2>
+      <div class="mt-8 space-y-4">
+        {steps.map((s, i) => (
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-950 text-sm font-bold text-white">{i + 1}</span>
+            <div>
+              <p class="font-semibold text-navy-950">{s.title}</p>
+              <p class="mt-1 text-sm text-slate-600">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended products -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">POPULAR PICKS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Products We Recommend Most</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {products.map((p) => (
+          <a href={p.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-base font-bold text-navy-950">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">View product <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Technical Support Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Stuck on Pump Selection?"
+    subtitle="Send your fluid data today — get a pump head, tubing and drive recommendation within 24 hours."
+  />
+</Layout>

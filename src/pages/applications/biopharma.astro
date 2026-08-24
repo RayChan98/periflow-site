@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Biopharma Peristaltic Pumps — Sterile Fluid Handling & Bioreactor Feed';
+const description = 'PERIFLOW peristaltic pumps for biopharma — sterile fluid handling, bioreactor feeding and single-use system integration with low-shear, contamination-free flow.';
+
+const why = [
+  { title: 'Single-Use System Ready', desc: 'Closed-tube flow paths integrate naturally with single-use assemblies — sterilize the tubing, use once, discard. No cleaning validation headaches.' },
+  { title: 'Zero Cross-Contamination', desc: 'Fluid touches only the tube interior. There are no seals, dead volumes or wetted cavities that could harbor product between runs.' },
+  { title: 'Low-Shear, Cell-Friendly Flow', desc: 'Gentle roller action protects cells, proteins and biologics during feeding, transfer and harvest.' },
+  { title: 'Precise, Controllable Feed Rates', desc: 'Accurate mL/min to L/min control with analog, RS485 or external trigger inputs for reproducible bioprocess feeding.' },
+];
+
+const tableRows = [
+  { application: 'Bioreactor feeding', requirement: 'Sterile, low-shear, precise mL/min feed rates', product: 'Pump heads, tubing' },
+  { application: 'Media & buffer preparation', requirement: 'Contamination-free transfer, single-use friendly', product: 'Benchtop pumps, tubing' },
+  { application: 'Sterile filtration transfer', requirement: 'Gentle handling, closed flow path', product: 'Benchtop pumps, pump heads' },
+  { application: 'Harvest & downstream transfer', requirement: 'Cell-friendly flow, run-dry safety', product: 'Pump heads, tubing' },
+  { application: 'Single-use assemblies', requirement: 'Pre-sterilized tubing, disposable path', product: 'Tubing' },
+];
+
+const products = [
+  { href: '/products/pump-heads/', title: 'Pump Heads', desc: 'YZ/LP series heads for feeding, transfer and harvest in bioprocess skids.' },
+  { href: '/products/tubing/', title: 'Pump Tubing', desc: 'Platinum-cured silicone tubing suitable for sterile and single-use applications.' },
+  { href: '/products/benchtop-pumps/', title: 'Benchtop Pumps', desc: 'Precision lab pumps with RS485 control for media prep and small-scale bioprocess.' },
+];
+
+const faqs = [
+  { q: 'Are peristaltic pumps suitable for sterile applications?', a: 'Yes. The closed tubing path keeps fluid isolated from the mechanism, and single-use tubing eliminates cleaning validation — a proven approach across biopharma.' },
+  { q: 'Can peristaltic pumps feed bioreactors without damaging cells?', a: 'The low-shear squeezing action is gentle on shear-sensitive cultures, making peristaltic pumps a standard choice for cell culture feeding.' },
+  { q: 'What about single-use assemblies?', a: 'Our tubing can be supplied pre-cut and terminated for integration into single-use assemblies, and pump heads are sized to accept standard tube bores.' },
+  { q: 'How do I control the feed rate accurately?', a: 'Digital speed control plus RS485, analog or trigger inputs allow precise, reproducible feed rates and easy integration with bioprocess control systems.' },
+  { q: 'Do you provide tubing that withstands autoclaving?', a: 'Platinum-cured silicone tubing can be autoclaved for sterilization. Tell us your sterilization method and we will confirm the right grade.' },
+  { q: 'Can you support OEM integration into bioprocess equipment?', a: 'Yes — panel-mount, multi-channel and 12-24V OEM configurations are available for equipment manufacturers. Share your specs for a proposal.' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/applications/" class="transition hover:text-white">Applications</a>
+        <span>/</span>
+        <span class="text-slate-200">Biopharma</span>
+      </nav>
+      <p class="mt-6 text-sm font-semibold uppercase tracking-wider text-brand-green">APPLICATIONS</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Biopharma Peristaltic Pumps for Sterile Fluid Handling & Bioreactor Feed</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">Protect your process and your product. PERIFLOW peristaltic pumps deliver sterile, low-shear, precisely controlled flow for bioreactor feeding, media prep and single-use systems.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 text-center text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">Request a Quote</button>
+        <a href="/products/pump-heads/" class="rounded-lg border border-white/20 px-6 py-3 text-center text-base font-semibold text-white transition hover:bg-white/10">View Pump Heads</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why peristaltic -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Why Peristaltic for Biopharma</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Why Biopharma Processes Need Peristaltic Pumps</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {why.map((w) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-navy-950">{w.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application table -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">BIOPROCESS SCENARIOS</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Biopharma Application Scenarios</h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-5 py-4 font-semibold">Application</th>
+              <th class="px-5 py-4 font-semibold">Typical Requirement</th>
+              <th class="px-5 py-4 font-semibold">Recommended Product</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {tableRows.map((r) => (
+              <tr class="transition hover:bg-slate-50">
+                <td class="px-5 py-4 font-bold text-navy-950">{r.application}</td>
+                <td class="px-5 py-4 text-slate-600">{r.requirement}</td>
+                <td class="px-5 py-4 text-slate-600">{r.product}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended products -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">RECOMMENDED</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Recommended for Biopharma</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {products.map((p) => (
+          <a href={p.href} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-base font-bold text-navy-950">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">View product <span class="transition group-hover:translate-x-0.5">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Biopharma Pump Questions</h2>
+      <div class="mt-8 space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer text-base font-bold text-navy-950">{f.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Designing a Bioprocess Fluid Path?"
+    subtitle="Share your flow rates and sterilization method — get a biopharma pump and tubing recommendation within 24 hours."
+  />
+</Layout>

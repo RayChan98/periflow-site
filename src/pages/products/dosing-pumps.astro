@@ -1,0 +1,133 @@
+---
+// 化学计量泵产品页
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const specs = [
+  ['Product Type', 'Chemical metering / dosing peristaltic pump'],
+  ['Max Discharge Pressure', '6 bar'],
+  ['Dosing Accuracy', '±1% repeatability'],
+  ['Speed Control', 'Adjustable, stepper-driven'],
+  ['Tubing Compatibility', 'Reinforced / PTFE-lined tubes for chemical duty'],
+  ['Control Options', 'Manual, pH control input, 4-20 mA / RS485 (optional)'],
+  ['Priming', 'Self-priming, dry-run tolerant'],
+  ['Fluid Contact', 'Tube interior only — chemical-resistant tube materials'],
+];
+
+const features = [
+  { title: 'Up to 6 bar Discharge', desc: 'Pressurised dosing into pipelines and vessels — enough head for most water treatment and chemical injection points.' },
+  { title: 'pH Control Ready', desc: 'Connect a pH controller and the pump tracks your set-point, trimming chemical feed automatically.' },
+  { title: 'Chemical-Safe Fluid Path', desc: 'PTFE-lined or reinforced tubing keeps aggressive reagents — acids, caustics, flocculants — away from pump hardware.' },
+  { title: 'Metering You Can Trust', desc: '±1% repeatability on every cycle, so your dose stays consistent even as line pressure changes.' },
+  { title: 'Self-Priming & Dry-Run Safe', desc: 'No foot valve to lose prime, no seal to fail. The pump re-primes itself after air ingress.' },
+  { title: 'Low Maintenance', desc: 'Replace the tube on schedule; no diaphragms, ball valves or packing glands to rebuild.' },
+];
+
+const applications = ['pH Adjustment', 'Water Treatment', 'Chemical Injection', 'Flocculant & Coagulant Dosing', 'Chlorine / Disinfectant Feed', 'Cooling Tower Treatment', 'Industrial Process Dosing', 'Wastewater Neutralisation'];
+
+const faqs = [
+  { q: 'How is a peristaltic dosing pump different from a diaphragm pump?', a: 'A peristaltic pump has no valves, diaphragms or seals — the fluid sits inside the tube and rollers squeeze it forward. That means no check-valve clogging, no loss of prime, and the only wear part is the tube.' },
+  { q: 'What does the 6 bar rating mean for my installation?', a: 'It means the pump can discharge against up to 6 bar of system pressure. If your injection point is under lower pressure, you get even longer tube life and smoother operation.' },
+  { q: 'Can it work with a pH controller?', a: 'Yes. The pump accepts a pH control signal, so your controller trims the chemical feed automatically to hold the set-point — a common setup for water treatment and plating lines.' },
+  { q: 'Which chemicals can it handle?', a: 'With PTFE-lined tubing the fluid path handles aggressive reagents including concentrated acids and caustics. Send us your chemical, concentration and temperature and we will confirm compatibility.' },
+  { q: 'How do I set the dose rate?', a: 'Set the speed on the drive — flow scales linearly with speed. For automation, optional 4-20 mA or RS485 control lets the plant PLC command the dose directly.' },
+  { q: 'What maintenance does a dosing pump need?', a: 'Schedule-based tube replacement, typically every few months depending on chemical aggressiveness and duty cycle. No valves to clean, no seals to replace.' },
+];
+---
+
+<Layout
+  title="Chemical Dosing Pumps up to 6 bar | PERIFLOW"
+  description="PERIFLOW chemical dosing pumps — peristaltic metering up to 6 bar with pH control, for water treatment, pH adjustment and chemical injection with ±1% repeatability."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">DOSING PUMPS</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">Chemical Dosing Without the Valve Headaches</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        Peristaltic metering up to 6 bar — pH control, water treatment and chemical injection with ±1% repeatability and a fluid path that only touches the tube.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600">Get a Quote</button>
+        <a href="#specifications" class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore Specifications</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术规格表 -->
+  <section id="specifications" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Technical Specifications</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Item</th>
+              <th class="px-6 py-3.5 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {specs.map(([item, value], i) => (
+              <tr class:list={['transition hover:bg-slate-50', i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white']}>
+                <td class="px-6 py-3 font-medium text-navy-950">{item}</td>
+                <td class="px-6 py-3 text-slate-600">{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">* Ratings depend on tube material and drive configuration. Contact us for the current datasheet for your chemical and pressure.</p>
+    </div>
+  </section>
+
+  <!-- 特性清单 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Engineered for Chemical Duty</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Applications</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {applications.map((a) => (
+          <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">{a}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-bold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Dosing Pump Spec'd for Your Chemical?"
+    subtitle="Send your chemical, concentration, flow and discharge pressure — we will confirm the right pump and tubing within 24 hours."
+  />
+</Layout>

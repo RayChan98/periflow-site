@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* PERIFLOW 品牌令牌（色板后置，随时可换） */
+  --color-navy-950: #0B1F33;   /* 深空蓝黑（主色） */
+  --color-navy-900: #102A45;
+  --color-navy-800: #17395C;
+  --color-navy-700: #1E4A78;
+  --color-brand-blue: #2563EB; /* 品牌辅色 */
+  --color-cta-orange: #F97316; /* 转化 CTA */
+  --color-brand-green: #10B981;/* 质量/认证点缀 */
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* sticky header 遮挡锚点时预留空间（Topbar+Header 高约 100px，留余量） */
+  scroll-padding-top: 140px;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}

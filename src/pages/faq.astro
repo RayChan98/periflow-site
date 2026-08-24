@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const faqs = [
+  {
+    q: 'How does a peristaltic pump work?',
+    a: 'A peristaltic pump moves fluid by squeezing a flexible tube with rotating rollers. The rollers press the tube against the pump housing, pushing fluid forward, then the tube rebounds and draws in the next volume. The fluid only ever touches the tube interior — no valves, no seals, no impellers.',
+  },
+  {
+    q: 'What tubing material should I choose?',
+    a: 'For most water-based, food and pharmaceutical applications, platinum-cured silicone is the right choice — it offers fast elastic recovery, transparency and reasonable cost. For aggressive chemicals (strong acids, bases, solvents) or high-temperature service, choose PTFE-lined composite tubing. Send us your fluid details and we will recommend the right material.',
+  },
+  {
+    q: 'How long does pump tubing last?',
+    a: 'Tube life depends on system pressure, roller occlusion, fluid chemistry and tube hardness. In light-duty lab use, silicone tubing can last months; in abrasive or high-pressure chemical service, replacement may be needed weekly or monthly. A good rule: replace when flow drops ~10% from baseline or when visible cracks, discoloration or permanent compression marks appear.',
+  },
+  {
+    q: 'Can a peristaltic pump run dry?',
+    a: 'Yes — one of the key advantages. A peristaltic pump can run dry without damage because the tube itself is the pumping element and it is self-lubricating against the rollers. This makes them ideal for emptying tanks, sampling and intermittent duty.',
+  },
+  {
+    q: 'Do you support OEM / ODM projects?',
+    a: 'Yes. We build panel-mount, multi-channel and 12-24V DC pumps to your specification, with a clear process: drawing review → sample → mass production. We support private-label branding and can supply pump heads and tubing as components for your own equipment.',
+  },
+  {
+    q: 'What is your minimum order quantity?',
+    a: 'Standard pump heads and tubing have a low MOQ (samples welcome). Custom OEM projects are quoted per project. Contact us with your volume and we will provide tiered pricing.',
+  },
+  {
+    q: 'What is your lead time?',
+    a: 'Standard items ship within 7-15 days. Custom OEM orders depend on tooling and quantity — we confirm a schedule during quotation.',
+  },
+  {
+    q: 'What payment methods do you accept?',
+    a: 'T/T, L/C, Western Union and PayPal for standard orders. For OEM projects we typically work with T/T (30% deposit, balance before shipment) or L/C at sight.',
+  },
+];
+---
+
+<Layout title="FAQ | PERIFLOW Peristaltic Pump Manufacturer" description="Frequently asked questions about peristaltic pumps, tubing selection, maintenance, MOQ and OEM services from PERIFLOW.">
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h1 class="text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
+      <p class="mt-3 max-w-2xl text-lg text-slate-300">Peristaltic pump selection, tubing, maintenance and ordering — answered.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white transition hover:border-brand-blue/40">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left text-base font-semibold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="border-t border-slate-100 px-5 py-4 text-sm leading-relaxed text-slate-600">
+              {f.a}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-slate-50 p-8 text-center">
+        <h2 class="text-xl font-extrabold text-navy-950">Still Have Questions?</h2>
+        <p class="mt-2 text-sm text-slate-600">Send us your application details and get a recommendation within 24 hours.</p>
+        <button type="button" data-quote-open class="mt-6 rounded-lg bg-cta-orange px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-600">
+          Ask a Question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Ready to Choose the Right Pump?"
+    subtitle="Tell us your fluid, flow rate and pressure — we will handle the rest."
+    ctaLabel="Get a Quote"
+  />
+</Layout>

@@ -1,0 +1,160 @@
+---
+// POPUP 询盘表单（全站 CTA 统一指向）——istamping 风格细分字段
+// 字段与全站表单一致 + 细分项：产品类型/数量/应用场景/夜视色彩/连接方式/采购角色
+const productOptions = [
+  'Pump Heads (YZ15 / YZ35 / LP series)',
+  'Pump Tubing (Silicone / PTFE)',
+  'Benchtop Pumps (Laboratory)',
+  'Dosing Pumps (Chemical / Metering)',
+  'OEM / ODM Custom',
+  'Spare Parts / Accessories',
+  'Other',
+];
+const qtyOptions = ['1-10 pcs (Sample)', '10-50 pcs', '50-500 pcs', '500+ pcs (Bulk)', 'Not sure yet'];
+const appOptions = ['Laboratory / R&D', 'Chemical Dosing / Water Treatment', 'Food & Beverage', 'Biopharma / Pharma', 'Industrial / OEM Equipment', 'Other'];
+const colorOptions = ['Silicone Tubing (Preferred)', 'PTFE-Lined Tubing', 'No preference'];
+const connectOptions = ['DC 12V / 24V', 'AC 110V / 220V', 'Stepper / RS485', 'Not sure'];
+const roleOptions = ['End User', 'Distributor / Wholesaler', 'OEM / Equipment Builder', 'Lab / Research Institute', 'Other'];
+---
+
+<div id="inquiry-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4" data-quote-modal aria-hidden="true">
+  <!-- 遮罩 -->
+  <div class="absolute inset-0 bg-navy-950/70 backdrop-blur-sm" data-quote-close></div>
+
+  <!-- 弹窗 -->
+  <div class="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="inquiry-modal-title">
+    <!-- 头部 -->
+    <div class="flex items-center justify-between bg-navy-950 px-6 py-4 text-white">
+      <div>
+        <h2 id="inquiry-modal-title" class="text-lg font-extrabold">Request a Quote</h2>
+        <p class="mt-0.5 text-xs text-slate-300">Replies within 24 hours · Volume pricing for distributors &amp; integrators</p>
+      </div>
+      <button type="button" class="rounded-lg p-2 transition hover:bg-white/10" data-quote-close aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+
+    <!-- 表单体 -->
+    <form id="inquiry-form" class="max-h-[70vh] overflow-y-auto px-6 py-5" action="/api/contact" method="post">
+      <input type="hidden" name="form_source" value="popup-modal" />
+      <input type="text" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="modal-name" class="mb-1.5 block text-sm font-medium text-navy-950">Your Name *</label>
+          <input id="modal-name" name="name" type="text" required placeholder="John Smith" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20" />
+        </div>
+        <div>
+          <label for="modal-email" class="mb-1.5 block text-sm font-medium text-navy-950">Business Email *</label>
+          <input id="modal-email" name="email" type="email" required placeholder="name@company.com" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20" />
+        </div>
+        <div>
+          <label for="modal-company" class="mb-1.5 block text-sm font-medium text-navy-950">Company Name</label>
+          <input id="modal-company" name="company" type="text" placeholder="Your company" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20" />
+        </div>
+        <div>
+          <label for="modal-role" class="mb-1.5 block text-sm font-medium text-navy-950">I am a...</label>
+          <select id="modal-role" name="buyer_role" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {roleOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="modal-product" class="mb-1.5 block text-sm font-medium text-navy-950">Product of Interest *</label>
+          <select id="modal-product" name="product" required class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {productOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="modal-qty" class="mb-1.5 block text-sm font-medium text-navy-950">Estimated Quantity</label>
+          <select id="modal-qty" name="quantity" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {qtyOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="modal-app" class="mb-1.5 block text-sm font-medium text-navy-950">Application Scene</label>
+          <select id="modal-app" name="application" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {appOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="modal-color" class="mb-1.5 block text-sm font-medium text-navy-950">Night Vision Preference</label>
+          <select id="modal-color" name="night_vision" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {colorOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="modal-connect" class="mb-1.5 block text-sm font-medium text-navy-950">Connection Type</label>
+          <select id="modal-connect" name="connection" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20">
+            {connectOptions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="modal-message" class="mb-1.5 block text-sm font-medium text-navy-950">Project Details *</label>
+          <textarea id="modal-message" name="message" rows="4" required placeholder="Tell us about your application: pump type, flow rate, tubing material, quantity, OEM requirements..." class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="mt-5 w-full rounded-lg bg-cta-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-orange-600 disabled:opacity-60">
+        Send Inquiry →
+      </button>
+      <p id="modal-form-status" class="mt-3 hidden text-sm font-medium"></p>
+      <p class="mt-3 text-center text-xs text-slate-400">Prefer direct contact? Email <a href="mailto:cj226144@gmail.com" class="text-brand-blue hover:underline">cj226144@gmail.com</a> or WhatsApp <a href="https://wa.me/8613710860663" target="_blank" rel="noopener" class="text-brand-blue hover:underline">+86 137 1086 0663</a></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('inquiry-modal');
+  const openers = document.querySelectorAll('[data-quote-open]');
+  const closers = modal ? modal.querySelectorAll('[data-quote-close]') : [];
+  const form = document.getElementById('inquiry-form');
+  const statusEl = document.getElementById('modal-form-status');
+
+  function openModal() {
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openers.forEach((btn) => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+  closers.forEach((btn) => btn.addEventListener('click', closeModal));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      statusEl.classList.add('hidden');
+      try {
+        const res = await fetch('/api/contact', { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        if (data.ok) {
+          window.location.href = '/thank-you/';
+        } else {
+          statusEl.textContent = data.error === 'mail_not_configured'
+            ? 'Service temporarily unavailable. Please email us directly at cj226144@gmail.com.'
+            : 'Something went wrong. Please email us directly at cj226144@gmail.com.';
+          statusEl.classList.remove('hidden');
+          statusEl.classList.add('text-red-600');
+        }
+      } catch (err) {
+        statusEl.textContent = 'Network error. Please email us directly at cj226144@gmail.com.';
+        statusEl.classList.remove('hidden');
+        statusEl.classList.add('text-red-600');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Send Inquiry →';
+    });
+  }
+</script>

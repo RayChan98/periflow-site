@@ -1,0 +1,47 @@
+---
+// Hero: dark navy + value prop + dual CTA
+const props = Astro.props;
+const eyebrow = props.eyebrow ?? 'Peristaltic Pump Manufacturer';
+const title = props.title ?? 'Peristaltic Pumps for Precision Fluid Transfer';
+const subtitle = props.subtitle ?? 'Pump heads, tubing and lab pumps — contamination-free, self-priming, ±1% precision. Factory-direct with OEM support.';
+const primaryCta = props.primaryCta ?? { href: '/products/', label: 'Explore Products' };
+const secondaryCta = props.secondaryCta ?? { href: '/contact/', label: 'Request a Quote' };
+---
+
+<section class="bg-navy-950 text-white">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-green">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-green"></span>
+          {eyebrow}
+        </p>
+        <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">{title}</h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{subtitle}</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={primaryCta.href} class="rounded-lg bg-cta-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-orange-600">{primaryCta.label}</a>
+          <a href={secondaryCta.href} class="rounded-lg border border-white/20 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10">
+            {secondaryCta.label}
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <!-- 占位图：蠕动泵示意 -->
+        <div class="aspect-video w-full overflow-hidden rounded-2xl bg-navy-800 ring-1 ring-white/10">
+          <svg viewBox="0 0 800 450" class="h-full w-full" role="img" aria-label="Peristaltic pump illustration">
+            <rect width="800" height="450" fill="#102A45"/>
+            <circle cx="400" cy="225" r="90" fill="none" stroke="#2563EB" stroke-width="3"/>
+            <circle cx="400" cy="225" r="55" fill="none" stroke="#10B981" stroke-width="3"/>
+            <path d="M310 225 a90 90 0 0 1 180 0" fill="none" stroke="#F97316" stroke-width="10" stroke-linecap="round"/>
+            <rect x="392" y="130" width="16" height="190" fill="#F97316" rx="4"/>
+            <text x="400" y="380" text-anchor="middle" fill="#64748B" font-size="20" font-family="sans-serif">PERIFLOW PUMP HEAD</text>
+          </svg>
+        </div>
+        <div class="absolute -bottom-4 -left-4 hidden rounded-xl bg-white p-4 shadow-2xl sm:block">
+          <p class="text-xs font-semibold text-slate-500">Flow Precision</p>
+          <p class="text-2xl font-extrabold text-navy-950">±1%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

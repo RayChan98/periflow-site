@@ -1,0 +1,133 @@
+---
+// 泵头产品页：YZ15/YZ35/LP15-6 系列
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const specs = [
+  ['Series', 'YZ15 / YZ35 / LP15-6'],
+  ['Speed Range', '0.1 - 600 rpm'],
+  ['Flow Accuracy', '±1% (repeatability)'],
+  ['Tubing Compatibility', '13# - 18# (standard sizes)'],
+  ['Flow Range', '0.014 - 4560 ml/min'],
+  ['Drive Type', 'Stepper motor, reversible'],
+  ['Self-Priming', 'Yes — up to 8 m suction lift (application dependent)'],
+  ['Fluid Contact', 'Tube interior only — no valves, no seals'],
+];
+
+const features = [
+  { title: '±1% Flow Accuracy', desc: 'Stepper-driven rollers deliver repeatable flow batch after batch — essential for media dispensing and chemical metering.' },
+  { title: '0.1-600 rpm Speed Range', desc: 'From slow crystallisation feeds to fast transfer cycles, one head covers the full lab-to-production spread.' },
+  { title: '13#-18# Tubing Compatibility', desc: 'Swap tube sizes to change flow without changing the head. One head, a whole flow range.' },
+  { title: 'Reversible & Self-Priming', desc: 'Run forward for dosing, reverse for purging. Self-priming and dry-run tolerant, so startups are forgiving.' },
+  { title: 'Low Shear, Gentle Pumping', desc: 'Peristaltic action is kind to shear-sensitive fluids — cells, polymers and emulsions stay intact.' },
+  { title: 'Minimal Maintenance', desc: 'The tube is the only wear part. Replace it in minutes — no pump teardown, no specialist tools.' },
+];
+
+const applications = ['Biotech & Cell Culture', 'Chemical Dosing', 'Lab Media Transfer', 'Printing Ink Circulation', 'Food & Beverage Filling', 'Ceramic Slurry', 'Water Sampling', 'OEM Instrumentation'];
+
+const faqs = [
+  { q: 'What is the difference between YZ15, YZ35 and LP15-6?', a: 'They differ in tubing capacity and flow window. YZ15 handles 13#-18# tubing for flows up to ~2280 ml/min, YZ35 accepts larger-bore tubes for higher flows up to 4560 ml/min, and LP15-6 is a compact low-profile head for space-constrained OEM builds. All share the same 0.1-600 rpm drive range and ±1% accuracy.' },
+  { q: 'How do I choose the right pump head?', a: 'Match the head to your required flow and tubing size. If your target flow fits within 13#-18# tubing at your drive speed, YZ15 is the usual choice; need more flow, step up to YZ35 or a larger bore tube.' },
+  { q: 'What tubing do these heads accept?', a: 'All standard 13#-18# sizes — platinum-cured silicone for clean fluids and PTFE-lined composite for aggressive chemicals. See our tubing page for the full size chart.' },
+  { q: 'Can pump heads be mounted in my own equipment?', a: 'Yes. YZ15, YZ35 and LP15-6 heads are panel- and bracket-mountable, and we supply them bare for OEM integration or complete with a drive.' },
+  { q: 'How long does the tubing last?', a: 'Tube life depends on speed, pressure and fluid chemistry. As a rule of thumb, run at the lowest speed that meets your flow and replace the tube on a set schedule — we help you pick the right material to maximise life.' },
+  { q: 'Do you supply spare tube sets?', a: 'Yes, in every standard size, packed per head. Volume pricing applies for distributors and OEM customers.' },
+];
+---
+
+<Layout
+  title="Peristaltic Pump Heads YZ15 / YZ35 / LP15-6 | PERIFLOW"
+  description="PERIFLOW pump heads — YZ15, YZ35 and LP15-6 series, 0.1-600 rpm, ±1% accuracy, 13#-18# tubing, flow 0.014-4560 ml/min for labs, OEM and production lines."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">PUMP HEADS</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">Pump Heads That Make Flow a Setting, Not a Gamble</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        YZ15, YZ35 and LP15-6 series — 0.1-600 rpm, ±1% accuracy and 13#-18# tubing compatibility for flows from 0.014 to 4560 ml/min. One head, the full range.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600">Get a Quote</button>
+        <a href="#specifications" class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore Specifications</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术规格表 -->
+  <section id="specifications" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Technical Specifications</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Item</th>
+              <th class="px-6 py-3.5 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {specs.map(([item, value], i) => (
+              <tr class:list={['transition hover:bg-slate-50', i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white']}>
+                <td class="px-6 py-3 font-medium text-navy-950">{item}</td>
+                <td class="px-6 py-3 text-slate-600">{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">* Flow measured with water on YZ15/YZ35 heads. Specifications subject to change — contact us for the current datasheet.</p>
+    </div>
+  </section>
+
+  <!-- 特性清单 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Why These Heads Earn Their Place</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Applications</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {applications.map((a) => (
+          <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">{a}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-bold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Need Help Picking a Pump Head?"
+    subtitle="Send your target flow, tubing preference and mounting requirements — we will confirm the right head within 24 hours."
+  />
+</Layout>

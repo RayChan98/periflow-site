@@ -1,0 +1,155 @@
+---
+// OEM/ODM 泵模块产品页
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const specs = [
+  ['Mounting Options', 'Panel mount, bracket mount, chassis integration'],
+  ['Channel Options', 'Single-channel to multi-channel manifolds'],
+  ['Supply Voltage', '12V - 24V DC (standard)'],
+  ['Drive Type', 'Stepper motor, micro-step controlled'],
+  ['Speed Range', '0.1 - 600 rpm (as configured)'],
+  ['Control Interface', 'PWM / pulse / RS485 / custom per your spec'],
+  ['Tubing Compatibility', '13# - 18# standard sizes'],
+  ['Documentation', 'Drawings, BOM, wiring and test reports per project'],
+];
+
+const processSteps = [
+  ['1. Specification & Drawing Review', 'Share your drawing, flow target and duty cycle. We confirm fit, materials and cost within days.'],
+  ['2. Prototype & Sampling', 'Machined prototype with your tubing and interface. You test it in your own equipment.'],
+  ['3. Pilot Run & Approval', 'A short pilot run verifies consistency, then you approve the final configuration.'],
+  ['4. Mass Production & QC', 'Production with per-unit flow testing, then shipping per your schedule and packaging spec.'],
+];
+
+const features = [
+  { title: 'Panel-Mount Ready', desc: 'Bare-head or complete drive modules sized for your panel, with standard cut-outs and mounting patterns.' },
+  { title: 'Multi-Channel Builds', desc: 'Two, four or more independent channels in one footprint — ideal for parallel dosing and filling stations.' },
+  { title: '12V-24V DC Power', desc: 'Run directly from your machine power supply — no separate power conversion, simpler integration.' },
+  { title: 'Stepper Motor Precision', desc: 'Micro-stepped drives give the speed control and repeatability your instrument needs.' },
+  { title: 'Custom Control Interfaces', desc: 'PWM, pulse, RS485 or your own protocol — we wire the pump to your controller, not the other way round.' },
+  { title: 'Full Documentation', desc: 'Drawings, BOM, wiring diagrams and test reports — everything your own QA and certification need.' },
+];
+
+const applications = ['Medical & Lab Instruments', 'Diagnostic Equipment', 'Printing & Ink Systems', 'Water & Beverage Dispensers', 'Cleaning & Disinfection Devices', 'Industrial Automation', 'Food Service Equipment', 'Analytical Instruments'];
+
+const faqs = [
+  { q: 'What is the minimum order quantity for OEM builds?', a: 'MOQ depends on the module and volume pricing tier. Prototype sampling can start from a single unit; production MOQs are agreed at the drawing stage and are typically modest for the industry.' },
+  { q: 'How does the OEM/ODM process start?', a: 'Share your drawing or specification — even a sketch is fine. We confirm feasibility, materials, cost and timeline, then move to prototype sampling.' },
+  { q: 'Can you customise the control protocol?', a: 'Yes. PWM, pulse counting, RS485 and custom command sets are all within our standard build options. Specify your controller and we match it.' },
+  { q: 'Do you support 12V and 24V operation?', a: 'Both are standard, and we can configure for your exact supply rail, including battery-powered portable instruments.' },
+  { q: 'Can you supply multi-channel pump modules?', a: 'Yes — multi-channel configurations are one of our core OEM options, with independent or synchronised channel control.' },
+  { q: 'Will my product be protected?', a: 'We work under NDA and keep your drawings, tooling and design confidential. Private-label and exclusivity arrangements are available.' },
+];
+---
+
+<Layout
+  title="OEM / ODM Peristaltic Pump Modules | PERIFLOW"
+  description="PERIFLOW OEM/ODM pump modules — panel-mount, multi-channel, 12V-24V DC and stepper-driven custom builds. From drawing to prototype to mass production."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <p class="text-sm font-semibold text-brand-green">OEM / ODM</p>
+      <h1 class="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">Your Drawing. Our Factory. Your Pump.</h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        Panel-mount, multi-channel, 12V-24V and stepper-driven modules — built to your spec through a clear OEM/ODM path from drawing review to mass production.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-quote-open class="rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600">Get a Quote</button>
+        <a href="#process" class="rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore the Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术规格表 -->
+  <section id="specifications" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Standard Build Options</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-navy-950 text-white">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Item</th>
+              <th class="px-6 py-3.5 font-semibold">Option / Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {specs.map(([item, value], i) => (
+              <tr class:list={['transition hover:bg-slate-50', i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white']}>
+                <td class="px-6 py-3 font-medium text-navy-950">{item}</td>
+                <td class="px-6 py-3 text-slate-600">{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">* Final configuration is defined by your drawing and approved sample. Contact us with your specification.</p>
+    </div>
+  </section>
+
+  <!-- OEM/ODM 流程 -->
+  <section id="process" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">The OEM/ODM Process</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map(([step, desc]) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <p class="text-sm font-bold text-brand-green">{step}</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 特性清单 -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Why OEM Builders Choose PERIFLOW</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-base font-bold text-navy-950">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-extrabold text-navy-950 sm:text-3xl">Applications</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {applications.map((a) => (
+          <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">{a}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-blue">FAQ</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-navy-950 sm:text-3xl">Questions Buyers Ask</h2>
+      <div class="mt-8 grid gap-4">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-slate-200 bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-bold text-navy-950">
+              {f.q}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Let's Build Your Pump Module"
+    subtitle="Send your drawing or specification — we will confirm feasibility, cost and prototype timing within 24 hours."
+  />
+</Layout>

@@ -1,0 +1,24 @@
+---
+// 移动端底部固定导航（molditquick 模式）：五大核心入口
+const items = [
+  { href: '/', label: 'Home', icon: '🏠' },
+  { href: '/products/', label: 'Products', icon: '📷' },
+  { href: '/services/', label: 'Services', icon: '🛠️' },
+  { href: '/blog/', label: 'Blog', icon: '📰' },
+  { href: '/contact/', label: 'Contact', icon: '✉️' },
+];
+---
+
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden" data-mobile-nav>
+  <nav class="mx-auto flex max-w-lg items-stretch justify-around" aria-label="Mobile bottom">
+    {items.map((item) => (
+      <a
+        href={item.href}
+        class="flex flex-1 flex-col items-center gap-0.5 px-1 py-2 text-[11px] font-medium text-slate-500 transition hover:text-brand-blue"
+      >
+        <span class="text-lg leading-none">{item.icon}</span>
+        <span>{item.label}</span>
+      </a>
+    ))}
+  </nav>
+</div>

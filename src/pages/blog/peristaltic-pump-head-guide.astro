@@ -1,0 +1,142 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<Layout title="Peristaltic Pump Head Guide: Types, Specs, Selection (YZ15, YZ35, LP) | PERIFLOW" description="Complete guide to peristaltic pump heads — YZ15, YZ35, LP series specs, tube compatibility, flow rates, materials and how to choose the right pump head for your application.">
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <p class="text-sm font-semibold text-brand-green">PERISTALTIC PUMP HEAD GUIDE</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Peristaltic Pump Head: Types, Specs &amp; How to Choose</h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-300">The pump head is the heart of any peristaltic pump — the part that squeezes the tube, drives the flow and decides accuracy, tube life and maintenance cost. Here's everything you need to spec one correctly.</p>
+      <p class="mt-4 text-sm text-slate-400">By Ray Chan · Updated August 2026 · ~15 min read</p>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+      <div class="prose prose-slate max-w-none">
+        <h2>What Is a Peristaltic Pump Head?</h2>
+        <p>A peristaltic pump head (also called a pumphead, pump cartridge or pump module) is the fluid-handling assembly that contains the rollers, rotor, tube track and housing. It is the component that physically compresses the tubing against a curved track, pushing fluid forward in a wave-like (peristaltic) motion. The pump head is mounted on a drive — either a stepper motor, brushless DC motor, or AC motor — and it is the part you swap when tube size or flow requirements change.</p>
+        <p>Unlike the pump drive (motor + controller + display), the pump head is a purely mechanical module. That separation is one of the biggest advantages of peristaltic pumps: you can run several different heads on one drive, change flow ranges by changing the head, and replace a worn head without touching the electronics.</p>
+
+        <h2>How a Peristaltic Pump Head Works</h2>
+        <p>The working principle is simple but elegant:</p>
+        <ol>
+          <li><strong>Roller compression.</strong> One or more rollers rotate and squeeze the flexible tube flat against the curved track.</li>
+          <li><strong>Fluid displacement.</strong> The squeezed section pushes fluid forward as the roller advances.</li>
+          <li><strong>Elastic recovery.</strong> After the roller passes, the tube's elasticity snaps it back to round, creating a vacuum that draws in the next slug of liquid.</li>
+          <li><strong>Repeat.</strong> The continuous cycle produces a steady, pulsatile flow proportional to rotor speed.</li>
+        </ol>
+        <p>Because the fluid only ever touches the inside of the tube — never the rollers, housing or motor — a peristaltic pump head delivers three fundamental advantages: <strong>no cross-contamination</strong> (the fluid path is single-use), <strong>self-priming</strong> (dry-run capable for most designs), and <strong>low maintenance</strong> (the only wear part is the tube itself).</p>
+
+        <h2>Main Types of Peristaltic Pump Heads</h2>
+        <p>Pump heads are classified by their roller configuration and tube mounting style. The three most common series in industrial and laboratory use are:</p>
+
+        <h3>YZ Series (Standard Multi-Channel Heads)</h3>
+        <p>The YZ series is the workhorse of the peristaltic pump world. It uses a channel design with 3 rollers per channel and accepts standard tubing sizes (13#–18# for YZ15, up to 25# for YZ35). YZ heads are available in 1, 2 and 4-channel configurations, letting one drive pump several fluids simultaneously — ideal for filling lines, multi-channel media dispensing and parallel dosing.</p>
+        <ul>
+          <li><strong>YZ15</strong>: fits 13#, 14#, 19#, 16#, 25#, 17#, 18# tubing; flow range roughly 0.014–4560 ml/min depending on drive speed.</li>
+          <li><strong>YZ35</strong>: fits larger tubing (up to 35# class); higher flow for industrial transfer, up to 12,000 ml/min.</li>
+        </ul>
+
+        <h3>LP Series (Compact/Low-Profile Heads)</h3>
+        <p>The LP series (e.g. LP15-6) is a low-profile, lightweight head designed for OEM integration and space-constrained equipment. It keeps the same tube compatibility as YZ15 but in a smaller footprint, often with a fixed occlusion setting that simplifies installation. LP heads are popular in medical devices, benchtop analyzers and compact filling equipment.</p>
+
+        <h3>Multi-Channel &amp; Special Heads</h3>
+        <p>Beyond YZ and LP, there are dedicated multi-channel heads (6, 8 or even 12 channels) for high-throughput dosing, sanitary/hygienic heads with smooth-flow internals for food and pharma, and high-pressure heads rated for 6 bar or more using reinforced composite tubing.</p>
+
+        <h2>Key Specifications Explained</h2>
+        <p>When comparing pump heads, these are the specifications that actually matter:</p>
+
+        <table>
+          <thead>
+            <tr><th>Spec</th><th>What It Means</th><th>Typical Values</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Channel count</td><td>Number of independent tube channels</td><td>1, 2, 4, 6, 8</td></tr>
+            <tr><td>Rollers</td><td>Roller count per channel; more rollers = smoother flow</td><td>2–3 standard</td></tr>
+            <tr><td>Speed range</td><td>Drive speed the head accepts</td><td>0.1–600 rpm</td></tr>
+            <tr><td>Flow rate</td><td>Volume delivered per minute (tube-dependent)</td><td>0.014–12,000 ml/min</td></tr>
+            <tr><td>Precision</td><td>Flow repeatability</td><td>±1% typical</td></tr>
+            <tr><td>Max pressure</td><td>Back-pressure tolerance</td><td>&gt;1 bar standard, 6 bar HP</td></tr>
+            <tr><td>Tube compatibility</td><td>Which tube sizes fit</td><td>13#–18# (YZ15), up to 25#/35# (YZ35)</td></tr>
+            <tr><td>Roller material</td><td>Wear resistance of rollers</td><td>Stainless steel, POM, ceramic</td></tr>
+            <tr><td>Shaft end</td><td>Drive interface</td><td>Round / flat / D-cut shaft</td></tr>
+            <tr><td>Housing material</td><td>Chemical resistance &amp; weight</td><td>Aluminum alloy, PP, PVDF</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Tube Compatibility &amp; Flow Rate Matrix</h2>
+        <p>A pump head does not have a fixed flow rate — flow depends on the tube size installed and the drive speed. This is why manufacturers publish a flow matrix rather than a single number. For an LP15-6 head:</p>
+
+        <table>
+          <thead>
+            <tr><th>Tube</th><th>ID (mm)</th><th>OD (mm)</th><th>Flow @100rpm</th><th>Flow @300rpm</th><th>Flow @600rpm</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>13#</td><td>0.8</td><td>4.0</td><td>14 ml/min</td><td>52 ml/min</td><td>84 ml/min</td></tr>
+            <tr><td>14#</td><td>1.6</td><td>4.8</td><td>54 ml/min</td><td>162 ml/min</td><td>324 ml/min</td></tr>
+            <tr><td>19#</td><td>2.4</td><td>5.6</td><td>110 ml/min</td><td>330 ml/min</td><td>660 ml/min</td></tr>
+            <tr><td>16#</td><td>3.1</td><td>6.3</td><td>190 ml/min</td><td>570 ml/min</td><td>1140 ml/min</td></tr>
+            <tr><td>25#</td><td>4.8</td><td>8.0</td><td>400 ml/min</td><td>1200 ml/min</td><td>2400 ml/min</td></tr>
+            <tr><td>17#</td><td>6.4</td><td>9.6</td><td>700 ml/min</td><td>2100 ml/min</td><td>4200 ml/min</td></tr>
+            <tr><td>18#</td><td>7.9</td><td>11.1</td><td>760 ml/min</td><td>2280 ml/min</td><td>4560 ml/min</td></tr>
+          </tbody>
+        </table>
+
+        <p>Key insight: choose the tube first, then confirm the head accepts it. A YZ15 head covers 13#–18#; a YZ35 head steps up to 25# and larger for high-volume transfer.</p>
+
+        <h2>Materials: What the Head Is Made Of</h2>
+        <p>Pump head materials determine chemical compatibility and longevity:</p>
+        <ul>
+          <li><strong>Aluminum alloy</strong> — standard for industrial heads; strong, lightweight, cost-effective. Not for aggressive acids.</li>
+          <li><strong>PP / POM</strong> — plastic housings for light-duty and food-contact applications; corrosion-resistant, lower cost.</li>
+          <li><strong>PVDF / PTFE-lined</strong> — for aggressive chemical service (98% sulfuric, 40% NaOH, solvents).</li>
+          <li><strong>Stainless steel rollers</strong> — standard; ceramic rollers for abrasive media.</li>
+        </ul>
+
+        <h2>How to Choose the Right Pump Head (4-Step Selection Guide)</h2>
+        <ol>
+          <li><strong>Define flow rate and tube size.</strong> Work backwards from your required flow (ml/min or L/h) to the tube size and speed. Use the flow matrix to pick a tube ID that hits your target in the mid-speed range (100–300 rpm) — this keeps accuracy high and tube wear low.</li>
+          <li><strong>Check chemical compatibility.</strong> Match the tube material to your fluid (silicone for water-based; PTFE-lined for aggressive chemicals), then confirm the head housing and rollers survive the same media.</li>
+          <li><strong>Count channels.</strong> One fluid line → single channel; parallel dispensing/filling → 2/4/8-channel head.</li>
+          <li><strong>Match the drive interface.</strong> Confirm shaft type (round/flat/D-cut) and speed range match your motor or controller. For OEM equipment, LP series or custom heads with panel-mount options keep the footprint small.</li>
+        </ol>
+
+        <h2>Maintenance: Extending Pump Head Life</h2>
+        <p>The pump head itself needs little maintenance — the tube is the consumable. But a few habits extend head life:</p>
+        <ul>
+          <li>Replace tubing at the first sign of cracks, discoloration or a 10%+ flow drop (the industry-standard replacement signal).</li>
+          <li>Keep the track and rollers clean; residue from aggressive fluids can accelerate roller wear.</li>
+          <li>Use the correct occlusion setting — over-tight occlusion crushes the tube and strains the rollers.</li>
+          <li>Lubricate moving parts per the manufacturer's schedule (some designs are maintenance-free).</li>
+        </ul>
+
+        <h2>FAQ</h2>
+        <h3>Can I run different tube sizes on one pump head?</h3>
+        <p>Only within the head's specified range (e.g. 13#–18# for YZ15). Each tube size needs a compatible occlusion setting; some heads are fixed-occlusion, others adjustable.</p>
+        <h3>What is the difference between YZ15 and YZ35?</h3>
+        <p>YZ15 accepts 13#–18# tubing for flow up to ~4560 ml/min; YZ35 accepts larger tubing (up to 25#/35# class) for flow up to ~12,000 ml/min. Choose YZ35 for industrial transfer, YZ15 for lab and dosing.</p>
+        <h3>Is a peristaltic pump head self-priming?</h3>
+        <p>Yes — most designs are self-priming and can run dry briefly without damage (the tube is the wear part). Check the manufacturer's dry-run rating.</p>
+        <h3>How accurate is flow with a peristaltic pump head?</h3>
+        <p>With a stepper drive, flow repeatability of ±1% is typical. Absolute accuracy depends on tube calibration and system back-pressure.</p>
+
+        <h2>Conclusion</h2>
+        <p>The pump head is where your flow accuracy, tube life and maintenance costs are decided. Choose the head after the tube, match materials to your chemistry, and buy from a manufacturer that publishes full spec tables — not vague marketing claims. If you're unsure which head fits your flow, chemical and drive requirements, send us your operating data and we'll recommend a matched head + tube combination.</p>
+        <p><strong>Related guides:</strong> <a href="/products/pump-heads/">Browse our YZ15 / YZ35 / LP pump heads</a> · <a href="/blog/ptfe-vs-silicone-tubing/">PTFE vs Silicone Tubing: 7 Key Differences</a> · <a href="/blog/how-long-does-pump-tubing-last/">How Long Does Pump Tubing Last?</a></p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">NEXT STEP</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-navy-950">Need a Pump Head Recommendation?</h2>
+        <p class="mt-3 text-slate-600">Send us your fluid type, required flow, pressure and drive preference — we respond within 24 hours with pricing and lead time.</p>
+        <button type="button" data-quote-open class="mt-5 inline-block rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white transition hover:bg-orange-600">Get a Quote</button>
+      </div>
+    </div>
+  </article>
+
+  <CtaBand title="Source Precision Pump Heads Direct from the Factory" subtitle="YZ15, YZ35 and LP series pump heads with full spec sheets, MOQ from 10 pcs, 7–15 day lead time." />
+</Layout>

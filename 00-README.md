@@ -3,7 +3,7 @@
 > 品牌：PERIFLOW（Peristaltic + Flow）
 > 域名：periflow.pages.dev（待注册正式域名，走 CF Registrar）
 > 技术栈：Astro 7 + Tailwind v4（fullcolorcam 原生模式，非 molditquick）
-> 状态：2026-08-24 夜间预跑 → 放权建站启动
+> 状态：2026-08-25 凌晨上线 ✅ 26 页全 200 + 表单通（B 批内容增量待跑）
 > Git 归属：**个人兼职（RayChan98 / cj226144）**，禁 grohoprecision-hub
 
 ## 定位（来自 M1 选品报告 01-选品报告-蠕动泵-M1.md）
@@ -39,9 +39,9 @@
 
 ## 待办
 
-- [ ] delegate 页面组完成后全量构建验证
-- [ ] 死链检查（qc_crawler 或 curl 全站 href）
-- [ ] CF Pages 部署 + 表单 env 配置 + 实测
-- [ ] 飞书网站记录表建表录入
+- [x] delegate 页面组完成后全量构建验证（26页 build 通过）
+- [x] 死链检查（文件系统级比对，真死链 0）
+- [x] CF Pages 部署（periflow.pages.dev 全 200）+ Zoho env 六件套 + 表单实测 ok:true
+- [ ] 飞书网站记录表建表录入（待办）
 - [ ] 正式域名注册（CF Registrar，主人操作）
 - [ ] 内容批量（A-E 五批：对比文/指南/选型/维护/FAQ）

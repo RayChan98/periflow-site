@@ -1,0 +1,136 @@
+---
+// B批：尺寸对照表独立页
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Peristaltic Pump Tubing Size Chart: 13#–18# and the Large-Bore Family';
+const date = 'August 25, 2026';
+const readTime = '6 min read';
+const related = [
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide', readTime: '12 min read' },
+  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing', readTime: '11 min read' },
+  { href: '/blog/how-to-replace-peristaltic-pump-tubing/', title: 'How to Replace Pump Tubing', readTime: '7 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="The complete peristaltic pump tubing size chart — ID, wall and OD for every 13#-18# size plus the 15#/24#/73#/82# large-bore family, with matching heads and flow."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Tubing Size Chart</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          Peristaltic pump tubing is specified by a size number (13#, 14#, 16# …) that looks random until you know the system: the number defines the bore, the wall thickness is fixed per series, and the OD follows from bore plus two walls. This page is the complete reference — every standard size with its ID, wall, OD, matching pump head and the flow it delivers.
+        </p>
+
+        <h2 id="chart">The Complete 13#–18# Size Chart</h2>
+        <p>
+          The standard YZ-series family uses a 1.6 mm wall. Flows below are for a YZ1515x-style head at 600 rpm:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Size</th><th>ID (mm)</th><th>Wall (mm)</th><th>OD (mm)</th><th>Max flow @ 600 rpm (ml/min)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>13#</td><td>0.8</td><td>1.6</td><td>4.0</td><td>42</td></tr>
+            <tr><td>14#</td><td>1.6</td><td>1.6</td><td>4.8</td><td>162</td></tr>
+            <tr><td>19#</td><td>2.4</td><td>1.6</td><td>5.6</td><td>306</td></tr>
+            <tr><td>16#</td><td>3.1</td><td>1.6</td><td>6.3</td><td>492</td></tr>
+            <tr><td>25#</td><td>4.8</td><td>1.6</td><td>8.0</td><td>1,020</td></tr>
+            <tr><td>17#</td><td>6.4</td><td>1.6</td><td>9.6</td><td>1,740</td></tr>
+            <tr><td>18#</td><td>7.9</td><td>1.6</td><td>11.1</td><td>2,280</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="heads">Which Head Takes Which Size</h2>
+        <p>
+          The wall thickness is the compatibility key — each head family is machined for one wall:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Head family</th><th>Wall</th><th>Tubing sizes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>YZ1515x-style</td><td>1.6 mm</td><td>13# 14# 19# 16# 25# 17# 18#</td></tr>
+            <tr><td>YZ2515x-style</td><td>2.4 mm</td><td>15# 24#</td></tr>
+            <tr><td>YZ35-style</td><td>3.3 mm</td><td>73# 82#</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="large">The Large-Bore Family (2.4 mm and 3.3 mm Wall)</h2>
+        <table>
+          <thead>
+            <tr><th>Size</th><th>ID × Wall (mm)</th><th>OD (mm)</th><th>Head</th><th>Max flow (ml/min)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>15#</td><td>4.8 × 2.4</td><td>9.6</td><td>YZ2515x</td><td>1,020</td></tr>
+            <tr><td>24#</td><td>6.4 × 2.4</td><td>11.2</td><td>YZ2515x</td><td>1,740</td></tr>
+            <tr><td>73#</td><td>9.6 × 3.3</td><td>16.2</td><td>YZ35</td><td>7,400</td></tr>
+            <tr><td>82#</td><td>13 × 3.3</td><td>19.6</td><td>YZ35</td><td>12,000</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="material">Size + Material = The Complete Spec</h2>
+        <p>
+          The size chart picks the geometry; the material picks the chemistry. Match your fluid to the material family (silicone for general and food duty, EPDM for acids and hypochlorite, PTFE-lined for solvents, Viton for oils) and then confirm the material is available in your size — most standard sizes come in all four families.
+        </p>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Is a bigger size number always a bigger tube?</h3>
+        <p>Within the 1.6 mm-wall family, yes — 18# has a larger bore than 13#. Across families the wall changes too, so compare ID (bore) and wall, not the size number alone.</p>
+        <h3>Can I use a 16# tube on a head rated for 13#?</h3>
+        <p>Only if the head is machined for the 1.6 mm wall and the track accepts the larger OD. YZ1515x-style heads accept 13#–18#; check the head's documented tube list before swapping.</p>
+        <h3>What does the wall thickness affect?</h3>
+        <p>Pressure rating, tube life and how hard the rollers must squeeze. Thin walls occlude easily (better low-flow accuracy); thick walls handle more pressure and volume. See the <a href="/blog/peristaltic-pump-tubing-guide/">full tubing guide</a> for the selection process.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing range</a> and <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Need Tubing Cut to Your Size?"
+    subtitle="13#–18# silicone, PTFE-lined, Viton and EPDM in coils or cut to length — factory-direct pricing within 24 hours."
+  />
+</Layout>

@@ -1,0 +1,117 @@
+---
+// C批：水处理应用
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Peristaltic Pumps in Water Treatment: Dosing, Sampling and Sludge Transfer';
+const date = 'August 25, 2026';
+const readTime = '10 min read';
+const related = [
+  { href: '/blog/peristaltic-pump-for-chemical-dosing/', title: 'Chemical Dosing Selection Guide', readTime: '12 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide', readTime: '12 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="How peristaltic pumps are used across water treatment — chemical dosing, sampling, sludge and polymer transfer — with sizing guidance for each duty."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Water Treatment Guide</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          Water and wastewater plants are peristaltic pump territory. Not because the pumps are exotic — quite the opposite. Peristaltic pumps are favored precisely because they are simple, dry-run capable and handle the three jobs that break other pumps: dosing aggressive chemicals, sampling dirty water, and transferring viscous sludge.
+        </p>
+
+        <h2 id="dosing">Chemical Dosing: The Core Duty</h2>
+        <p>
+          Coagulants, flocculants, pH control agents, sodium hypochlorite, polymers — dosing pumps must be accurate, chemical-resistant and able to run against back pressure. Peristaltic pumps score on all three:
+        </p>
+        <ul>
+          <li><strong>Accuracy:</strong> flow is proportional to speed, so a 0.1–600 rpm drive gives precise, repeatable dosing with ±1% repeatability on a YZ15 head.</li>
+          <li><strong>Chemical resistance:</strong> the fluid touches only the tube — choose silicone, EPDM or PTFE-lined tubing to match the chemical.</li>
+          <li><strong>Dry-run safe:</strong> a dosing pump that runs out of chemical does not destroy itself, unlike gear or diaphragm pumps that need liquid for lubrication.</li>
+        </ul>
+
+        <h2 id="sampling">Sampling: Clean, Representative Samples</h2>
+        <p>
+          Autosamplers and online analyzers need to draw representative samples without contaminating them or the line. A peristaltic pump with a fresh tube section gives a clean sample path every cycle — and because the tube is disposable, cross-contamination between sample points is eliminated.
+        </p>
+
+        <h2 id="sludge">Sludge and Polymer Transfer</h2>
+        <p>
+          Thick sludge, polymer gels and filter press feed are too viscous and abrasive for most pumps. Peristaltic pumps handle them by rolling the fluid along in the tube — no valves to clog, no impellers to wear. For high-viscosity transfer, a YZ35-style head with 73#/82# tubing moves up to 12,000 ml/min.
+        </p>
+
+        <h2 id="size">Sizing Guide for Water Duty</h2>
+        <table>
+          <thead>
+            <tr><th>Duty</th><th>Head family</th><th>Typical tubing</th><th>Flow range</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Chemical dosing (pH, coagulant)</td><td>YZ15</td><td>13#–16#</td><td>0.007 – 492 ml/min</td></tr>
+            <tr><td>Polymer/flocculant</td><td>YZ15 / YZ25</td><td>19#–25#</td><td>up to 1,020 ml/min</td></tr>
+            <tr><td>Sampling</td><td>YZ15 multi-channel</td><td>13#–14#</td><td>0.007 – 162 ml/min</td></tr>
+            <tr><td>Sludge / filter press feed</td><td>YZ35</td><td>73#–82#</td><td>up to 12,000 ml/min</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Can a peristaltic dosing pump handle sodium hypochlorite?</h3>
+        <p>Yes — with the right tubing. Hypochlorite oxidizes many elastomers, so EPDM or a dedicated hypochlorite-grade tube is recommended. Confirm compatibility before committing.</p>
+        <h3>Do peristaltic pumps need check valves for dosing?</h3>
+        <p>For anti-siphon protection and to hold prime at the injection point, a simple foot valve or check valve on the suction side is common. The pump itself does not need valves to meter.</p>
+        <h3>What maintenance does a water-treatment peristaltic pump need?</h3>
+        <p>Basically one job: replace the tube on schedule (every 300–2,000 hours depending on duty) and keep the head clean. See our <a href="/blog/how-to-replace-peristaltic-pump-tubing/">8-step replacement SOP</a> for the full procedure.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Sizing a Pump for Your Water Plant?"
+    subtitle="Send us the chemical, dose rate and line pressure — we recommend the head, drive and tubing within 24 hours."
+  />
+</Layout>

@@ -1,0 +1,101 @@
+---
+// 能不能类：自吸/干转
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Can Peristaltic Pumps Self-Prime? And 5 Other Questions About Dry Running';
+const date = 'August 25, 2026';
+const readTime = '7 min read';
+const related = [
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/how-to-replace-peristaltic-pump-tubing/', title: 'How to Replace Pump Tubing', readTime: '7 min read' },
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide', readTime: '12 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="Can peristaltic pumps self-prime, run dry and pull a vacuum? Yes — and here is what it means for suction lift, tube life and system design."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Self-Priming FAQ</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          One of the most searched questions in pump engineering is also one of the simplest to answer: yes, peristaltic pumps self-prime. They also run dry without damage, pull a strong vacuum and reverse flow instantly. That combination is rare — and it is exactly why peristaltic pumps show up in so many dosing and transfer applications.
+        </p>
+
+        <h2 id="prime">Yes, They Self-Prime — Here Is How</h2>
+        <p>
+          A peristaltic pump creates its own suction by the roller squeezing the tube: the squeeze pushes fluid ahead of the roller and creates a vacuum behind it, which draws fluid into the tube. Because the pump chamber is the tube itself, there is no air pocket to bleed — the pump simply pushes the air out and pulls liquid in. Practical suction lift is typically up to 8–9 meters of water column, depending on tube stiffness and speed.
+        </p>
+
+        <h2 id="dry">Dry Running: Fine for a While, Not Forever</h2>
+        <p>
+          Unlike most pumps, a peristaltic pump running dry does not destroy its seals or impeller — there are none. The only wearing part is the tube, and a dry tube still rolls through the head. The risk is heat: at high speed with no fluid to carry heat away, the tube can overheat and fail early. For intermittent dry running (hoppers that occasionally empty, dosing tanks that run low) this is acceptable; for continuous dry running, reduce speed or use a tube rated for the duty.
+        </p>
+
+        <h2 id="vacuum">Vacuum and Reversibility</h2>
+        <ul>
+          <li><strong>Strong vacuum:</strong> peristaltic pumps hold a good vacuum (down to roughly 0.1–0.2 bar absolute with a tight tube), useful for filter priming and lifting fluid from a sump.</li>
+          <li><strong>Instant reverse:</strong> reversing the drive reverses the flow — handy for purging lines, flushing or retracting a sample. No valves to change.</li>
+          <li><strong>Dead-head safe:</strong> a blocked discharge line does not overpressure the pump; the tube just stops squeezing and the drive stalls or the tube slowly creeps. Always fit a pressure limit on the drive for protection.</li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>How high can a peristaltic pump lift water?</h3>
+        <p>Typically 8–9 m of suction lift at moderate speed with a well-seated tube. Higher lifts need a stiffer tube and slower speed; beyond that, consider a foot valve and flooded suction.</p>
+        <h3>Will dry running void the warranty?</h3>
+        <p>Most manufacturers allow intermittent dry running but rate the tube life accordingly. Check your pump's duty rating — continuous dry running at high speed is the main way to shorten tube life.</p>
+        <h3>Can I use a peristaltic pump for a vacuum application?</h3>
+        <p>Yes, for light vacuum duty such as filter priming and sampling. For hard vacuum (below ~0.1 bar absolute) a dedicated vacuum pump is the right tool.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Questions About Your Pumping Application?"
+    subtitle="Send us the fluid, lift and duty cycle — we answer within 24 hours with a head and tubing recommendation."
+  />
+</Layout>

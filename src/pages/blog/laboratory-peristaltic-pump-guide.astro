@@ -1,0 +1,117 @@
+---
+// C批：实验室应用指南
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Laboratory Peristaltic Pumps: Applications, Specs and Tubing Choices';
+const date = 'August 25, 2026';
+const readTime = '10 min read';
+const related = [
+  { href: '/blog/yz15-vs-yz35-pump-head/', title: 'YZ15 vs YZ35 Pump Head', readTime: '9 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide', readTime: '12 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="How laboratories use peristaltic pumps — cell culture, filling, chromatography and sampling — plus the accuracy, tubing and cleanliness specs that matter for lab duty."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Lab Peristaltic Pump Guide</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          Walk through any biology, chemistry or pharmaceutical lab and you will find peristaltic pumps — not because they are the cheapest option, but because they are the only pump that can move a fluid without the fluid ever touching the pump mechanism. The tube is the pump, and the tube is disposable. For labs, that is the whole point: zero cross-contamination between runs, no seals to fail, no rotor to clean.
+        </p>
+
+        <h2 id="apps">Where Peristaltic Pumps Earn Their Place in the Lab</h2>
+        <ul>
+          <li><strong>Cell culture and media transfer.</strong> Gentle pumping that does not shear cells — peristaltic action is low-shear by design, unlike gear or centrifugal pumps.</li>
+          <li><strong>Dispensing and filling.</strong> Multi-channel heads deliver matched volumes to several vials or wells at once, with accuracy around ±1%.</li>
+          <li><strong>Chromatography and filtration.</strong> Steady, pulsing-minimized flow keeps column packing stable and pressure profiles reproducible.</li>
+          <li><strong>Sampling and dosing.</strong> Small-bore tubing (13#–14#) meters microliter to milliliter volumes on demand.</li>
+          <li><strong>Bioreactor feed.</strong> Slow, continuous addition of nutrients or pH control agents over hours or days.</li>
+        </ul>
+
+        <h2 id="specs">Specs That Matter for Lab Duty</h2>
+        <table>
+          <thead>
+            <tr><th>Spec</th><th>Why it matters</th><th>Typical lab requirement</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Flow accuracy</td><td>Dosing and filling repeatability</td><td>±1% or better</td></tr>
+            <tr><td>Flow range</td><td>Micro-dosing to media transfer</td><td>0.007 – 2,280 ml/min (YZ15 family)</td></tr>
+            <tr><td>Speed control</td><td>Reversible, stepper-driven for reproducible flow</td><td>0.1 – 600 rpm, digital setpoint</td></tr>
+            <tr><td>Multi-channel</td><td>Parallel filling without extra drives</td><td>2 – 6 channels</td></tr>
+            <tr><td>Tube material</td><td>Biocompatibility and extractables</td><td>Platinum-cured silicone, PTFE-lined</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="tubing">Tubing Choices for the Lab</h2>
+        <p>
+          The tube is the only wetted surface, so material selection is a contamination decision. Three options cover most lab work:
+        </p>
+        <ul>
+          <li><strong>Platinum-cured silicone</strong> — the default. Low extractables, autoclavable, transparent so you can see the flow. Good for media, buffer and most aqueous solutions.</li>
+          <li><strong>PTFE-lined tubing</strong> — for aggressive solvents and chemicals where silicone would degrade. Combines PTFE chemical resistance with the flexibility a pump head needs.</li>
+          <li><strong>Peroxide-cured silicone</strong> — the economical choice for non-regulated general transfer and waste lines.</li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Can a peristaltic pump be autoclaved?</h3>
+        <p>The pump head and drive should not go in the autoclave — but the tubing and fittings can. That is the workflow: remove the tube, autoclave it (or replace with a sterile spare), and reinstall. This is what makes peristaltic pumps practical for sterile work.</p>
+        <h3>How accurate is a lab peristaltic pump?</h3>
+        <p>With a stepper drive and matched tubing, repeatability of ±1% or better is realistic. Absolute accuracy depends on calibration, tube condition and back pressure — which is why the replacement SOP matters as much as the pump spec.</p>
+        <h3>What flow range should I buy for a general lab pump?</h3>
+        <p>A YZ15-style head on a 0.1–600 rpm drive covers roughly 0.007 to 2,280 ml/min depending on tube size — enough for micro-dosing and media transfer alike. Keep a spare drive only if you routinely need two flows at once.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Spec a Lab Pump for Your Workflow?"
+    subtitle="Send us the application, volumes and tube material preference — we reply within 24 hours with a head, drive and tubing recommendation."
+  />
+</Layout>

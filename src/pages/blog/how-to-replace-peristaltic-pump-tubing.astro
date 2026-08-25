@@ -1,0 +1,108 @@
+---
+// B批：换管 SOP
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'How to Replace Peristaltic Pump Tubing: An 8-Step SOP That Keeps Flow Accurate';
+const date = 'August 25, 2026';
+const readTime = '7 min read';
+const related = [
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/how-long-does-pump-tubing-last/', title: 'How Long Does Pump Tubing Last?', readTime: '9 min read' },
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide', readTime: '12 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="When to replace peristaltic pump tubing, the 5 warning signs, and an 8-step replacement SOP that keeps flow accuracy and prevents pump head damage."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">How to Replace Pump Tubing</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          Replacing the tube in a peristaltic pump is a five-minute job that most teams stretch into a whole afternoon of guesswork — different tube lengths, the wrong tension, the track not seated, flow recalibrated twice. The good news: with a simple SOP, tube replacement becomes the most reliable maintenance task on the line.
+        </p>
+
+        <h2 id="when">When to Replace: 5 Warning Signs</h2>
+        <ul>
+          <li><strong>Flow drops below spec.</strong> If the pump cannot reach its set flow at the same speed, the tube has lost elastic recovery.</li>
+          <li><strong>Visible cracking or crazing.</strong> Surface cracks mean the material is degrading — replace before a leak, not after.</li>
+          <li><strong>White or cloudy patches.</strong> These are internal stress marks where the roller squeezes; the tube is about to split.</li>
+          <li><strong>Tube no longer returns to round.</strong> After removing from the head, a healthy tube springs back. A flattened or oval section means permanent set.</li>
+          <li><strong>Buildup or swelling.</strong> Media absorption makes the tube sticky, swollen or discolored — a sign of chemical incompatibility, not just age.</li>
+        </ul>
+        <p>
+          As a rule of thumb, plan on 300–2,000 hours depending on speed, pressure and media. Log actual hours per installation — your own data beats any manufacturer estimate.
+        </p>
+
+        <h2 id="sop">The 8-Step Replacement SOP</h2>
+        <ol>
+          <li><strong>Isolate and depressurize.</strong> Stop the pump, close inlet and outlet valves, and drain the line. Never change a tube under pressure.</li>
+          <li><strong>Release the head.</strong> Open the pump head latch (or release the clamping mechanism) so the roller track is accessible.</li>
+          <li><strong>Remove the old tube.</strong> Pull it out of the track and the inlet/outlet fittings. Inspect it — note the failure mode for your maintenance log.</li>
+          <li><strong>Check the head.</strong> Wipe the rollers and track. Look for wear, debris or chemical residue. A dirty track eats a new tube fast.</li>
+          <li><strong>Cut the new tube to the marked length.</strong> Most heads have a tube length guide; use the pre-marked length on the tubing or measure against the old piece. Square ends matter — a ragged end leaks at the fitting.</li>
+          <li><strong>Seat the tube fully.</strong> Lay it into the track and confirm it is seated against the back wall before closing the latch. A pinched tube halves flow.</li>
+          <li><strong>Close the head and check occlusion.</strong> The tube should be just visibly compressed by the rollers — not crushed. If the drive stalls or the tube looks flattened, release and re-seat.</li>
+          <li><strong>Prime and verify flow.</strong> Run the pump at low speed until fluid flows, then confirm the flow rate against spec. Recalibrate if your system has a flow setpoint.</li>
+        </ol>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Should I replace tubing on a schedule or on condition?</h3>
+        <p>Both. Use a conservative schedule for critical or regulated processes (for example every 500 hours), and condition-based replacement for general duty — the 5 signs above. Logging hours makes the schedule data-driven.</p>
+        <h3>Can I reuse a removed tube?</h3>
+        <p>No. Once a tube has taken a permanent set from roller compression it will never deliver accurate flow again. Tubing is a consumable — the cost of a tube is far lower than the cost of a failed batch.</p>
+        <h3>Why does my new tube still leak at the fitting?</h3>
+        <p>Almost always one of three things: the end was not cut square, the tube was not seated fully in the track, or the fitting was over-tightened. Re-cut, re-seat and hand-tighten the fitting, then retest.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Stocking Up on Pump Tubing?"
+    subtitle="13#–18# silicone, PTFE-lined, Viton and EPDM tubing cut to length or in coils — factory-direct with fast DDP shipping."
+  />
+</Layout>

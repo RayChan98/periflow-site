@@ -1,0 +1,149 @@
+---
+// A批对比文：YZ15 vs YZ35 泵头
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'YZ15 vs YZ35 Pump Head: Which One Fits Your Flow Range?';
+const date = 'August 25, 2026';
+const readTime = '9 min read';
+const related = [
+  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing: 7 Differences', readTime: '11 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/how-long-does-pump-tubing-last/', title: 'How Long Does Pump Tubing Last?', readTime: '9 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="YZ15 vs YZ35 peristaltic pump head — flow range, tubing sizes, roller design and material compared with real numbers, plus a selection guide for dosing and transfer duty."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">YZ15 vs YZ35 Pump Head</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          When you buy a peristaltic pump, the head is the part that actually does the pumping — the drive just spins it. Two head families dominate the factory-direct market: the YZ15-style head for small and mid-range dosing, and the YZ35-style head for high-flow transfer. They look similar from a distance. They are engineered for completely different jobs.
+        </p>
+        <p>
+          This guide compares the two with real numbers — tubing sizes, flow ranges, roller design and construction — so you can specify the right head the first time instead of discovering the mismatch after the pump is on your skid.
+        </p>
+
+        <h2 id="specs">YZ15 vs YZ35 at a Glance</h2>
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>YZ1515x / YZ15-style</th><th>YZ35LS / YZ35-style</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Typical tubing</td><td>13# 14# 19# 16# 25# (17# 18# with wider heads)</td><td>73# / 82#</td></tr>
+            <tr><td>Tube wall</td><td>1.6 mm</td><td>3.3 mm</td></tr>
+            <tr><td>Flow range</td><td>0.007 – 2,280 ml/min (YZ1515x at 600 rpm)</td><td>up to 12,000 ml/min (82# at 600 rpm)</td></tr>
+            <tr><td>Rollers</td><td>3 (compact head)</td><td>3 (large stainless)</td></tr>
+            <tr><td>Construction</td><td>PPS / aluminum housing, stainless shaft</td><td>Full stainless steel body and rollers</td></tr>
+            <tr><td>Typical duty</td><td>Dosing, metering, laboratory, sampling</td><td>Drum transfer, filling lines, process transfer</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="yz15">The YZ15 Family: Precision Dosing, 13#–18# Tubing</h2>
+        <p>
+          YZ1515x-style heads use 1.6 mm-wall tubing from 13# (0.8 mm bore) up to 18# (7.9 mm bore). That wall thickness is the key: it is thin enough to occlude cleanly with a compact roller set, which gives you fine flow control and good accuracy at low to medium flow. On a 600 rpm drive the practical range is roughly 0.007 to 2,280 ml/min depending on tube size:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Tube</th><th>Bore (mm)</th><th>Wall (mm)</th><th>Max flow @ 600 rpm (ml/min)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>13#</td><td>0.8</td><td>1.6</td><td>42</td></tr>
+            <tr><td>14#</td><td>1.6</td><td>1.6</td><td>162</td></tr>
+            <tr><td>19#</td><td>2.4</td><td>1.6</td><td>306</td></tr>
+            <tr><td>16#</td><td>3.1</td><td>1.6</td><td>492</td></tr>
+            <tr><td>25#</td><td>4.8</td><td>1.6</td><td>1,020</td></tr>
+            <tr><td>17#</td><td>6.4</td><td>1.6</td><td>1,740</td></tr>
+            <tr><td>18#</td><td>7.9</td><td>1.6</td><td>2,280</td></tr>
+          </tbody>
+        </table>
+        <p>
+          The YZ1515x handles one channel; multi-channel versions (2, 4, 6 channels) share one drive and give you matched dosing across several lines. That makes the YZ15 family the default for chemical dosing, water treatment, sampling and laboratory work.
+        </p>
+
+        <h2 id="yz35">The YZ35 Family: High-Flow Transfer, 73#/82# Tubing</h2>
+        <p>
+          YZ35-style heads (for example the YZ35LS) take heavy-wall tubing — 73# (9.6 × 3.3 mm) and 82# (13 × 3.3 mm) — with a large stainless roller set and stainless housing. The bigger bore plus the stronger roller pressure moves serious volume: up to 7,400 ml/min with 73# and 12,000 ml/min with 82# at 600 rpm.
+        </p>
+        <table>
+          <thead>
+            <tr><th>Tube</th><th>Bore × Wall (mm)</th><th>Max flow @ 600 rpm (ml/min)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>73#</td><td>9.6 × 3.3</td><td>7,400</td></tr>
+            <tr><td>82#</td><td>13 × 3.3</td><td>12,000</td></tr>
+          </tbody>
+        </table>
+        <p>
+          YZ35 is the head for drum emptying, tank transfer, filling lines and process transfer where a few litres per minute is not enough. The stainless build also makes it the safer choice for aggressive chemicals — no coating on the rollers to wear off and contaminate the fluid path.
+        </p>
+
+        <h2 id="choose">How to Choose Between Them</h2>
+        <ol>
+          <li><strong>Calculate your real flow.</strong> Work in ml/min at your operating speed, not the pump's maximum. If you need under ~2 L/min, a YZ15 head gives finer control and cheaper tubing.</li>
+          <li><strong>Check the tube size you plan to stock.</strong> Standard 1.6 mm-wall sizes (13#–18#) are inexpensive and universally available; 73#/82# are a heavier, pricier consumable.</li>
+          <li><strong>Match precision vs volume.</strong> Dosing and metering = YZ15. Bulk transfer = YZ35. If you need both, run two heads on separate drives — it costs less than a machine that does neither well.</li>
+          <li><strong>Consider pressure.</strong> Both families handle roughly 1–2 bar continuous in standard trim; above that, peristaltic pumping in general needs a re-think.</li>
+        </ol>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Can I put a YZ35 head on a small dosing drive?</h3>
+        <p>Mechanically possible only if the drive has enough torque and the right shaft type. The 73#/82# tubing creates much higher rolling resistance, so a small drive will stall or run hot. Size the drive to the head, not the other way around.</p>
+        <h3>Which head has better accuracy?</h3>
+        <p>At matched flow, the YZ15 family typically holds tighter accuracy (around ±1% with a good drive) because the smaller bore is less sensitive to speed variation. YZ35 is accurate enough for transfer but not for precision metering.</p>
+        <h3>Are the tubing sizes interchangeable between YZ15 and YZ35 heads?</h3>
+        <p>No. YZ15 heads use 1.6 mm-wall tubes (13#–18#); YZ35 heads use 3.3 mm-wall tubes (73#/82#). Never force a tube into the wrong head — flow accuracy and tube life both collapse.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Tell Us Your Flow Rate — We Will Pick the Head"
+    subtitle="Send us the media, required flow and duty cycle — we reply within 24 hours with a head and drive recommendation, factory-direct."
+  />
+</Layout>

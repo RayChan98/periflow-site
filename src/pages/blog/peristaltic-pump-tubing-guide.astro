@@ -1,0 +1,131 @@
+---
+// B批选型指南：泵管选型（13#-18# 尺寸+材质）
+import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const title = 'Peristaltic Pump Tubing Guide: Sizes, Materials and a 4-Step Selection Process';
+const date = 'August 25, 2026';
+const readTime = '12 min read';
+const related = [
+  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing: 7 Differences', readTime: '11 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
+  { href: '/blog/how-to-replace-peristaltic-pump-tubing/', title: 'How to Replace Pump Tubing', readTime: '7 min read' },
+];
+---
+
+<Layout
+  title={`${title} | PERIFLOW Blog`}
+  description="The complete peristaltic pump tubing guide — 13# to 18# size chart, silicone vs PTFE vs Viton vs EPDM material comparison, and a 4-step selection process for your fluid."
+>
+  <!-- Hero -->
+  <section class="bg-navy-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+      <nav class="mb-8 text-sm text-slate-400" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-white">Home</a>
+        <span class="mx-1">/</span>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <span class="mx-1">/</span>
+        <span class="text-slate-200">Pump Tubing Guide</span>
+      </nav>
+      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
+          Ray Chan
+        </span>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+      <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
+
+        <p>
+          In a peristaltic pump the tube is the pump: it is the only wetted part, the only consumable and — on most systems — the part that decides accuracy, contamination risk and running cost. Yet tubing is also the most underspecified component in a pump quote. Buyers spend an hour on the drive and thirty seconds on the tube.
+        </p>
+        <p>
+          This guide gives you the complete picture: the size system (13# to 18# and beyond), the material options that actually matter in B2B service, and a 4-step selection process you can hand to any engineer.
+        </p>
+
+        <h2 id="sizes">The Tubing Size System: 13#–18#</h2>
+        <p>
+          YZ-series heads use a simple numbering system. The size number defines the bore (ID); the wall thickness is fixed per series — 1.6 mm for the standard YZ15 family. The OD follows as bore + 2 × wall. Here is the full chart with the flow each size delivers on a YZ1515x head at 600 rpm:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Size</th><th>ID (mm)</th><th>Wall (mm)</th><th>OD (mm)</th><th>Max flow (ml/min @ 600 rpm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>13#</td><td>0.8</td><td>1.6</td><td>4.0</td><td>42</td></tr>
+            <tr><td>14#</td><td>1.6</td><td>1.6</td><td>4.8</td><td>162</td></tr>
+            <tr><td>19#</td><td>2.4</td><td>1.6</td><td>5.6</td><td>306</td></tr>
+            <tr><td>16#</td><td>3.1</td><td>1.6</td><td>6.3</td><td>492</td></tr>
+            <tr><td>25#</td><td>4.8</td><td>1.6</td><td>8.0</td><td>1,020</td></tr>
+            <tr><td>17#</td><td>6.4</td><td>1.6</td><td>9.6</td><td>1,740</td></tr>
+            <tr><td>18#</td><td>7.9</td><td>1.6</td><td>11.1</td><td>2,280</td></tr>
+          </tbody>
+        </table>
+        <p>
+          For higher flow, move to the 2.4 mm-wall family (15# 4.8 × 2.4, 24# 6.4 × 2.4) on YZ2515x heads, or the 3.3 mm-wall family (73# 9.6 × 3.3, 82# 13 × 3.3) on YZ35 heads — up to 12,000 ml/min.
+        </p>
+
+        <h2 id="materials">Material Comparison: What Each Tube Is Good At</h2>
+        <table>
+          <thead>
+            <tr><th>Material</th><th>Elastic recovery</th><th>Chemical resistance</th><th>Temperature</th><th>Typical use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Silicone</td><td>Excellent</td><td>Good (water, mild acids, food)</td><td>-50 to 200 °C</td><td>Food, pharma, lab, general duty — the default</td></tr>
+            <tr><td>PTFE-lined</td><td>Good (composite)</td><td>Excellent (almost everything)</td><td>-40 to 260 °C</td><td>Aggressive chemicals, solvents</td></tr>
+            <tr><td>Viton (FKM)</td><td>Good</td><td>Excellent (oils, acids)</td><td>-20 to 200 °C</td><td>Oils, fuels, aggressive fluids</td></tr>
+            <tr><td>EPDM</td><td>Good</td><td>Good (acids, alkalis)</td><td>-40 to 130 °C</td><td>Water treatment, mild chemicals</td></tr>
+            <tr><td>Norprene-type TPE</td><td>Very good</td><td>Good</td><td>-60 to 135 °C</td><td>Long-life industrial transfer</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="select">The 4-Step Selection Process</h2>
+        <ol>
+          <li><strong>Write down the fluid.</strong> Exact chemical, concentration, temperature and any abrasives. Compatibility charts are the starting point — never guess from the fluid name alone.</li>
+          <li><strong>Pick the size from your flow.</strong> Convert your required ml/min at your operating speed to a tube size using the chart above. Oversizing hurts accuracy; undersizing hurts tube life.</li>
+          <li><strong>Check pressure and temperature.</strong> Confirm the tube's rated maximums against your back pressure and fluid temperature — and remember running at the maximum shortens life quickly.</li>
+          <li><strong>Order a small lot and log it.</strong> Buy enough for one change, record actual hours to failure in your duty cycle, then scale the purchase and the spares plan.</li>
+        </ol>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>What is the difference between 13# and 14# tubing?</h3>
+        <p>Only the bore — 0.8 mm vs 1.6 mm. Wall thickness and OD family differ accordingly, so each size needs its matching pump head track. They are not interchangeable.</p>
+        <h3>How do I know which wall thickness my head uses?</h3>
+        <p>Check the head model: YZ1515x-style heads take 1.6 mm wall; YZ2515x takes 2.4 mm wall; YZ35 takes 3.3 mm wall. Using the wrong wall thickness gives inaccurate flow and premature tube failure.</p>
+        <h3>Is platinum-cured silicone worth the premium?</h3>
+        <p>For food, pharma and biotech service, yes — platinum-cured silicone has lower extractables and better biocompatibility. For industrial water and general transfer, standard peroxide-cured silicone is usually sufficient.</p>
+      </article>
+
+      <!-- Related 互链 -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">Related Reading</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-blue">
+              <p class="text-sm font-semibold leading-snug text-navy-950 transition group-hover:text-brand-blue">{r.title}</p>
+              <p class="mt-2 text-xs text-slate-400">{r.readTime}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-slate-500">
+          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Need Help Choosing Tubing?"
+    subtitle="Send us the fluid, temperature and flow — we will spec the material and size within 24 hours, factory-direct."
+  />
+</Layout>

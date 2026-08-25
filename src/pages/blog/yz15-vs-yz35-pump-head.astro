@@ -1,21 +1,21 @@
 ---
-// A批对比文：YZ15 vs YZ35 泵头
+// 文章：YZ15 vs YZ35 泵头横向对比（管号/流量/转速/应用/精度/价格）
 import Layout from '../../layouts/Layout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 
-const title = 'YZ15 vs YZ35 Pump Head: Which One Fits Your Flow Range?';
+const title = 'YZ15 vs YZ35 Peristaltic Pump Head: Which One Do You Need?';
 const date = 'August 25, 2026';
-const readTime = '9 min read';
+const readTime = '12 min read';
 const related = [
-  { href: '/blog/ptfe-vs-silicone-tubing/', title: 'PTFE vs Silicone Tubing: 7 Differences', readTime: '11 min read' },
-  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic Pump vs Diaphragm Pump', readTime: '10 min read' },
-  { href: '/blog/how-long-does-pump-tubing-last/', title: 'How Long Does Pump Tubing Last?', readTime: '9 min read' },
+  { href: '/blog/peristaltic-pump-head-guide/', title: 'Peristaltic Pump Head Guide: Types, Specs & How to Choose', readTime: '15 min read' },
+  { href: '/blog/peristaltic-pump-tubing-guide/', title: 'Peristaltic Pump Tubing Guide: Materials, Sizes & Selection', readTime: '13 min read' },
+  { href: '/blog/peristaltic-vs-diaphragm-pump/', title: 'Peristaltic vs Diaphragm Pump: Which Is Right for You?', readTime: '10 min read' },
 ];
 ---
 
 <Layout
   title={`${title} | PERIFLOW Blog`}
-  description="YZ15 vs YZ35 peristaltic pump head — flow range, tubing sizes, roller design and material compared with real numbers, plus a selection guide for dosing and transfer duty."
+  description="YZ15 vs YZ35 peristaltic pump head comparison — tube compatibility (13#–25# vs larger bore), flow rate, speed range, accuracy, application fit and price positioning, with a selection checklist and FAQ."
 >
   <!-- Hero -->
   <section class="bg-navy-950 text-white">
@@ -27,7 +27,8 @@ const related = [
         <span class="mx-1">/</span>
         <span class="text-slate-200">YZ15 vs YZ35 Pump Head</span>
       </nav>
-      <h1 class="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
+      <p class="text-sm font-semibold text-brand-green">PUMP HEAD COMPARISON</p>
+      <h1 class="mt-2 max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1>
       <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
         <span class="inline-flex items-center gap-2">
           <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-blue text-sm font-bold text-white">RC</span>
@@ -45,83 +46,148 @@ const related = [
   <section class="bg-white">
     <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
       <article class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:text-navy-950 prose-h2:mt-12 prose-h3:mt-8 prose-a:text-brand-blue">
-
         <p>
-          When you buy a peristaltic pump, the head is the part that actually does the pumping — the drive just spins it. Two head families dominate the factory-direct market: the YZ15-style head for small and mid-range dosing, and the YZ35-style head for high-flow transfer. They look similar from a distance. They are engineered for completely different jobs.
+          If you are shopping for a peristaltic pump, you will meet the same two pump head names again and again: YZ15 and YZ35. They look similar, mount on the same drives, and work on the same squeezing-tube principle — yet they are designed for different halves of the flow spectrum. Choose YZ15 for the wrong reason and you will struggle to transfer liters per minute; choose YZ35 for the wrong reason and you will be fighting for fine control at milliliters per minute. Getting the head right is the difference between a pump that feels built for your process and one you fight every day.
         </p>
         <p>
-          This guide compares the two with real numbers — tubing sizes, flow ranges, roller design and construction — so you can specify the right head the first time instead of discovering the mismatch after the pump is on your skid.
+          This guide compares the YZ15 and YZ35 pump heads across tube compatibility, flow and speed range, accuracy, application fit and price positioning — then gives you a five-point decision checklist and answers the questions buyers ask most. By the end, you should be able to name the right head for your flow, tube and budget without a sales call.
         </p>
 
-        <h2 id="specs">YZ15 vs YZ35 at a Glance</h2>
+        <h2 id="what-are">What Are the YZ15 and YZ35 Pump Heads?</h2>
+        <p>
+          Both heads belong to the YZ series, the standard workhorse family of peristaltic pump heads used across laboratory, dosing and light industrial equipment. A YZ head is a mechanical module containing rollers, a rotor and a curved tube track; it mounts on a separate drive (stepper, brushless DC or AC motor with a controller) and the drive's speed determines the flow. YZ heads are typically available in 1, 2 and 4-channel versions, so one drive can pump several fluids in parallel for filling lines and multi-channel dispensing.
+        </p>
+        <p>
+          The practical difference between YZ15 and YZ35 comes down to the envelope of tubing each one can accept — specifically the tube's internal diameter and wall size. The head's track radius, roller spacing and occlusion are machined around a band of tube sizes, and that single difference cascades into flow capacity, precision and the applications each head suits. In most catalogs, YZ15 is the small-bore head and YZ35 is the large-bore head, with some overlap in the middle.
+        </p>
+
+        <h2 id="tubing">Tube Compatibility: 13#–25# vs Larger Bore Tubing</h2>
+        <p>
+          Tubing in the peristaltic world is identified by a size number (13#, 14#, 19#, 16#, 25#, 17#, 18#, 35#, 36# and so on). The number maps to a combination of internal and external diameter, and each pump head is designed for a specific band of these sizes. This is the first and most important filter in your decision.
+        </p>
+        <p>
+          The <strong>YZ15</strong> head accepts the standard small-to-medium sizes — 13#, 14#, 19#, 16#, 25#, 17# and 18# — which covers internal diameters from roughly 0.8 mm (13#) up to about 7.9 mm (18#). That is a wide and genuinely useful band: it includes the classic laboratory tubing sizes and the mid-range 25# used in many dosing applications.
+        </p>
+        <p>
+          The <strong>YZ35</strong> head is built for larger bore tubing — 25# and up, typically into the 35# and 36# class with internal diameters around 9.7 mm and beyond. The larger tube holds more fluid per revolution of the rotor, which is exactly what you want for high-volume transfer. Some YZ35 heads can also take mid-range sizes, but they are happiest with big-bore tubing, and fitting a tiny 13# tube in a YZ35 track usually produces poor occlusion and unstable flow. As a rule of thumb: if your tube size is 25# or smaller, YZ15 covers it; if you plan to run 35#-class tubing, you need a YZ35.
+        </p>
+
+        <h2 id="flow">Flow Rate and Speed Range</h2>
+        <p>
+          A pump head has no fixed flow rate — flow is the product of tube internal diameter, rotor speed and the head's occlusion setting. That is why manufacturers publish flow matrices instead of a single number, and why the same drive can deliver wildly different flows depending on which head and tube you mount. Still, the two heads occupy clearly different flow bands.
+        </p>
+        <p>
+          On a typical variable-speed drive (0.1–600 rpm is a common range), a <strong>YZ15</strong> head with small tubing delivers from well under a milliliter per minute up to roughly 4,500 ml/min with the largest tube at top speed. The small-bore end of the YZ15 range is where precision dosing lives: with 13# or 14# tubing, you can meter a few milliliters per minute at a comfortable mid-speed, which keeps accuracy high and tube wear low.
+        </p>
+        <p>
+          A <strong>YZ35</strong> head, by contrast, is built to move volume. With 35#-class tubing at high speed, YZ35-class heads are commonly rated to around 12,000 ml/min (12 L/min) — roughly three times the ceiling of a YZ15. The trade-off is that the same drive speed moves far more fluid per revolution, so fine low-flow control is harder to achieve. If most of your operating life sits above 1–2 L/min, the YZ35 is the natural fit; if you live in the milliliters range, the YZ15 gives you a much larger usable speed window.
+        </p>
+
+        <h2 id="accuracy">Accuracy: Where Each Head Earns Its Precision</h2>
+        <p>
+          Both heads can deliver repeatable flow — with a stepper drive and fresh, correctly sized tubing, repeatability of around ±1% is typical for the YZ family. The difference is resolution, not capability. A small tube in a YZ15 delivers less volume per revolution, so a single step of the motor moves a smaller quantity of fluid. That makes the YZ15 the better tool for precise, low-flow metering: reagent addition, media dispensing, analytical dosing. The same precision at higher flows simply requires more speed.
+        </p>
+        <p>
+          The YZ35's larger bore moves more fluid per revolution, which makes it inherently coarser at the low end but extremely effective where repeatable high-volume delivery is the goal — batch filling, transfer, circulation. In both cases, accuracy depends far more on tube condition and drive quality than on the head itself: a worn or incorrectly sized tube erodes precision no matter which head you choose. If your process needs strict dosing accuracy in the low-flow range, pair the YZ15 with a stepper drive and keep the tubing on a replacement schedule.
+        </p>
+
+        <h2 id="applications">Application Fit: Laboratory Dosing vs Industrial Transfer</h2>
+        <p>
+          The two heads have become shorthand for two application worlds, and the shorthand is mostly accurate. The <strong>YZ15</strong> is the default for laboratory and light-duty work: pumping culture media, reagents, buffers and samples; filling tubes and vials; feeding analyzers and dispensers; OEM integration into benchtop instruments. Its small-tube range, fine flow control and compact, low-cost design map directly onto equipment where volume is modest and accuracy matters.
+        </p>
+        <p>
+          The <strong>YZ35</strong> is the industrial-transfer head: moving water, chemicals, slurries and viscous fluids in larger batches, filling drums and tanks, circulating coolant or CIP solution, transferring fluids in food, water-treatment and light process settings. Because the fluid only ever touches the tube interior, both heads handle corrosive and abrasive media gracefully — the head materials and tube material decide compatibility, not the pump mechanism. If your duty is continuous, high-volume and less precision-sensitive, the YZ35's bigger bore means fewer tube revolutions per liter, which typically translates to longer tube life per unit of fluid moved.
+        </p>
+
+        <h2 id="cost">Cost and Price Positioning</h2>
+        <p>
+          On purchase price, the YZ15 is usually the cheaper head: it is smaller, uses less material, and its tubing is inexpensive per meter. For a laboratory or OEM budget, the YZ15 is the low-entry-cost route into peristaltic pumping, and replacement tubes for 13#–19# sizes cost little to stock. The YZ35 commands a higher upfront price, justified by larger machining, bigger rollers and the heavier-duty construction needed to squeeze large-bore tubing.
+        </p>
+        <p>
+          Total cost of ownership changes the picture slightly. At high throughput, the YZ35's larger tube moves far more fluid per meter of tubing, so consumable cost per liter can actually favor the bigger head — you replace tubing less often relative to volume moved. In low-volume laboratory work, that economy never materializes, and the YZ15 with cheap small-bore tubing is the sensible choice. When comparing quotes, ask suppliers for the head price together with a tube price list for your size — the pair is what matters, not the head alone.
+        </p>
+
+        <h2 id="comparison">YZ15 vs YZ35: Side-by-Side Comparison</h2>
         <table>
           <thead>
-            <tr><th>Parameter</th><th>YZ1515x / YZ15-style</th><th>YZ35LS / YZ35-style</th></tr>
+            <tr>
+              <th>Dimension</th>
+              <th>YZ15</th>
+              <th>YZ35</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>Typical tubing</td><td>13# 14# 19# 16# 25# (17# 18# with wider heads)</td><td>73# / 82#</td></tr>
-            <tr><td>Tube wall</td><td>1.6 mm</td><td>3.3 mm</td></tr>
-            <tr><td>Flow range</td><td>0.007 – 2,280 ml/min (YZ1515x at 600 rpm)</td><td>up to 12,000 ml/min (82# at 600 rpm)</td></tr>
-            <tr><td>Rollers</td><td>3 (compact head)</td><td>3 (large stainless)</td></tr>
-            <tr><td>Construction</td><td>PPS / aluminum housing, stainless shaft</td><td>Full stainless steel body and rollers</td></tr>
-            <tr><td>Typical duty</td><td>Dosing, metering, laboratory, sampling</td><td>Drum transfer, filling lines, process transfer</td></tr>
+            <tr>
+              <td>Tube compatibility</td>
+              <td>13#, 14#, 19#, 16#, 25#, 17#, 18# (13#–25# class)</td>
+              <td>Larger bore — 25# and up, 35#/36# class typical</td>
+            </tr>
+            <tr>
+              <td>Tube internal diameter</td>
+              <td>Roughly 0.8 mm to ~7.9 mm</td>
+              <td>Roughly 9.7 mm and beyond</td>
+            </tr>
+            <tr>
+              <td>Typical flow range</td>
+              <td>Well under 1 ml/min up to ~4,500 ml/min (drive dependent)</td>
+              <td>Up to ~12,000 ml/min (12 L/min) with 35#-class tubing</td>
+            </tr>
+            <tr>
+              <td>Speed range</td>
+              <td>Accepts standard drives, 0.1–600 rpm typical</td>
+              <td>Accepts standard drives; higher torque recommended for large tubes</td>
+            </tr>
+            <tr>
+              <td>Accuracy</td>
+              <td>±1% typical repeatability; finer low-flow resolution</td>
+              <td>±1% typical repeatability; coarser per-revolution resolution</td>
+            </tr>
+            <tr>
+              <td>Best application</td>
+              <td>Laboratory, dosing, filling, OEM, low-flow metering</td>
+              <td>Industrial transfer, high-volume filling, circulation, slurries</td>
+            </tr>
+            <tr>
+              <td>Channels available</td>
+              <td>1, 2, 4 (typical)</td>
+              <td>1, 2 (typical)</td>
+            </tr>
+            <tr>
+              <td>Price positioning</td>
+              <td>Lower upfront cost; inexpensive small-bore tubing</td>
+              <td>Higher upfront cost; lower consumable cost per liter at high volume</td>
+            </tr>
           </tbody>
         </table>
 
-        <h2 id="yz15">The YZ15 Family: Precision Dosing, 13#–18# Tubing</h2>
-        <p>
-          YZ1515x-style heads use 1.6 mm-wall tubing from 13# (0.8 mm bore) up to 18# (7.9 mm bore). That wall thickness is the key: it is thin enough to occlude cleanly with a compact roller set, which gives you fine flow control and good accuracy at low to medium flow. On a 600 rpm drive the practical range is roughly 0.007 to 2,280 ml/min depending on tube size:
-        </p>
-        <table>
-          <thead>
-            <tr><th>Tube</th><th>Bore (mm)</th><th>Wall (mm)</th><th>Max flow @ 600 rpm (ml/min)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>13#</td><td>0.8</td><td>1.6</td><td>42</td></tr>
-            <tr><td>14#</td><td>1.6</td><td>1.6</td><td>162</td></tr>
-            <tr><td>19#</td><td>2.4</td><td>1.6</td><td>306</td></tr>
-            <tr><td>16#</td><td>3.1</td><td>1.6</td><td>492</td></tr>
-            <tr><td>25#</td><td>4.8</td><td>1.6</td><td>1,020</td></tr>
-            <tr><td>17#</td><td>6.4</td><td>1.6</td><td>1,740</td></tr>
-            <tr><td>18#</td><td>7.9</td><td>1.6</td><td>2,280</td></tr>
-          </tbody>
-        </table>
-        <p>
-          The YZ1515x handles one channel; multi-channel versions (2, 4, 6 channels) share one drive and give you matched dosing across several lines. That makes the YZ15 family the default for chemical dosing, water treatment, sampling and laboratory work.
-        </p>
-
-        <h2 id="yz35">The YZ35 Family: High-Flow Transfer, 73#/82# Tubing</h2>
-        <p>
-          YZ35-style heads (for example the YZ35LS) take heavy-wall tubing — 73# (9.6 × 3.3 mm) and 82# (13 × 3.3 mm) — with a large stainless roller set and stainless housing. The bigger bore plus the stronger roller pressure moves serious volume: up to 7,400 ml/min with 73# and 12,000 ml/min with 82# at 600 rpm.
-        </p>
-        <table>
-          <thead>
-            <tr><th>Tube</th><th>Bore × Wall (mm)</th><th>Max flow @ 600 rpm (ml/min)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>73#</td><td>9.6 × 3.3</td><td>7,400</td></tr>
-            <tr><td>82#</td><td>13 × 3.3</td><td>12,000</td></tr>
-          </tbody>
-        </table>
-        <p>
-          YZ35 is the head for drum emptying, tank transfer, filling lines and process transfer where a few litres per minute is not enough. The stainless build also makes it the safer choice for aggressive chemicals — no coating on the rollers to wear off and contaminate the fluid path.
-        </p>
-
-        <h2 id="choose">How to Choose Between Them</h2>
-        <ol>
-          <li><strong>Calculate your real flow.</strong> Work in ml/min at your operating speed, not the pump's maximum. If you need under ~2 L/min, a YZ15 head gives finer control and cheaper tubing.</li>
-          <li><strong>Check the tube size you plan to stock.</strong> Standard 1.6 mm-wall sizes (13#–18#) are inexpensive and universally available; 73#/82# are a heavier, pricier consumable.</li>
-          <li><strong>Match precision vs volume.</strong> Dosing and metering = YZ15. Bulk transfer = YZ35. If you need both, run two heads on separate drives — it costs less than a machine that does neither well.</li>
-          <li><strong>Consider pressure.</strong> Both families handle roughly 1–2 bar continuous in standard trim; above that, peristaltic pumping in general needs a re-think.</li>
-        </ol>
+        <h2 id="choose">How to Choose: 5-Point Decision Checklist</h2>
+        <ul>
+          <li><strong>If</strong> your required flow is under roughly 500 ml/min — <strong>then</strong> choose the YZ15; it gives you a wide usable speed window and fine control where precision dosing lives.</li>
+          <li><strong>If</strong> you need liters-per-minute transfer (1 L/min or more sustained) — <strong>then</strong> choose the YZ35; its large-bore tubing delivers high volume without pushing the drive to its limit.</li>
+          <li><strong>If</strong> your tubing size is 19# or smaller — <strong>then</strong> choose the YZ15; small tubes sit poorly in a large-bore track and produce unstable occlusion and flow.</li>
+          <li><strong>If</strong> you plan to run 25# or larger tubing — <strong>then</strong> confirm the head: YZ15 covers 25# in most designs, but 35#-class tubing requires a YZ35.</li>
+          <li><strong>If</strong> precision low-flow dosing is the priority and budget is tight — <strong>then</strong> choose the YZ15 with a stepper drive and fresh small-bore tubing, and keep spare tube stock small and cheap.</li>
+        </ul>
 
         <h2 id="faq">FAQ</h2>
-        <h3>Can I put a YZ35 head on a small dosing drive?</h3>
-        <p>Mechanically possible only if the drive has enough torque and the right shaft type. The 73#/82# tubing creates much higher rolling resistance, so a small drive will stall or run hot. Size the drive to the head, not the other way around.</p>
-        <h3>Which head has better accuracy?</h3>
-        <p>At matched flow, the YZ15 family typically holds tighter accuracy (around ±1% with a good drive) because the smaller bore is less sensitive to speed variation. YZ35 is accurate enough for transfer but not for precision metering.</p>
-        <h3>Are the tubing sizes interchangeable between YZ15 and YZ35 heads?</h3>
-        <p>No. YZ15 heads use 1.6 mm-wall tubes (13#–18#); YZ35 heads use 3.3 mm-wall tubes (73#/82#). Never force a tube into the wrong head — flow accuracy and tube life both collapse.</p>
+        <h3>Can a YZ35 head also run 13#–19# small tubing?</h3>
+        <p>Generally not well. The YZ35's track, roller spacing and occlusion are machined for large-bore tubing, and small tubes in a big track typically produce inconsistent occlusion, unstable flow and premature tube wear. If your application is small-tube dosing, the YZ15 is the right head.</p>
+        <h3>Which head is more accurate, YZ15 or YZ35?</h3>
+        <p>Both deliver around ±1% repeatability with a stepper drive and fresh tubing. The YZ15 offers finer resolution at low flow because a small tube moves less volume per revolution; the YZ35 is better suited to repeatable high-volume delivery. Accuracy depends mostly on tube condition, sizing and drive quality.</p>
+        <h3>How much flow can each head actually deliver?</h3>
+        <p>On a typical 0.1–600 rpm drive, a YZ15 spans from well under 1 ml/min up to roughly 4,500 ml/min depending on tube size and speed. A YZ35 with 35#-class tubing is commonly rated to around 12,000 ml/min. Exact numbers come from the manufacturer's flow matrix for your tube size and drive speed.</p>
+        <h3>Do YZ15 and YZ35 mount on the same pump drive?</h3>
+        <p>In most designs, yes — both use the same standard mounting interface and shaft types, so one drive can run either head. Just confirm the drive's torque and speed range: a YZ35 squeezing a large tube needs more torque than a YZ15 with 13# tubing, especially at low speed.</p>
+        <h3>Is the YZ35 always better for industrial use?</h3>
+        <p>Not automatically. Industrial use means higher volume, which favors the YZ35, but many industrial processes are precision dosing at modest flows — and there the YZ15 (or an LP-style head) is the better fit. Choose by flow and tube size first, and by industry label second.</p>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>
+          The YZ15 and YZ35 are two ends of the same dependable YZ family, and the decision between them is mostly a flow-and-tube question. If your process lives in the milliliters range, uses 13#–19# tubing, and rewards fine control — laboratory work, dosing, filling, OEM equipment — the YZ15 is the sensible, lower-cost choice. If you are moving liters per minute with large-bore tubing, the YZ35 is the head that keeps drive speed reasonable and consumable cost per liter low.
+        </p>
+        <p>
+          Not sure which side of the line your application falls on? Send us your fluid, target flow and tube preference — we will recommend a matched head-and-tube combination with a straight answer, and quote both options so you can see the cost difference for yourself.
+        </p>
       </article>
 
       <!-- Related 互链 -->
@@ -136,14 +202,22 @@ const related = [
           ))}
         </div>
         <p class="mt-6 text-sm text-slate-500">
-          Explore our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing</a> for factory-direct pricing.
+          See the hardware behind the comparison — our <a href="/products/pump-heads/" class="font-semibold text-brand-blue hover:underline">pump heads</a> and <a href="/products/tubing/" class="font-semibold text-brand-blue hover:underline">pump tubing range</a>.
         </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-blue">NEXT STEP</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-navy-950">Not Sure Which Head Fits Your Flow?</h2>
+        <p class="mt-3 text-slate-600">Tell us your fluid, required flow and tube size — we respond within 24 hours with a head-and-tube recommendation and pricing for both YZ15 and YZ35 options.</p>
+        <button type="button" data-quote-open class="mt-5 inline-block rounded-lg bg-cta-orange px-6 py-3 font-semibold text-white transition hover:bg-orange-600">Get a Quote</button>
       </div>
     </div>
   </section>
 
   <CtaBand
-    title="Tell Us Your Flow Rate — We Will Pick the Head"
-    subtitle="Send us the media, required flow and duty cycle — we reply within 24 hours with a head and drive recommendation, factory-direct."
+    title="Source the Right Pump Head Direct from the Factory"
+    subtitle="YZ15 and YZ35 series pump heads with full flow matrices, MOQ from 10 pcs and 7–15 day lead time — plus matched tubing to complete the setup."
   />
 </Layout>
